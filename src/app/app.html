@@ -1,7 +1,27 @@
-<h1>Project Name : {{title()}}</h1>
-<h3>{{angularVersion}}</h3>
+<div class="container">
 
-<h4 >{{getTechWithVersion()}}</h4>
-<div [innerHTML]="getTechWithVersion()"></div>
+  <div class="section">
+    <h1>Project Name : {{title()}}</h1>
+    <h3>Angular Version : {{angularVersion}}</h3>
+  </div>
 
-<h5>Total of : {{GetTotal(15,8)}}</h5>
+  <div class="section">
+    <h4>Tech & Version (String Interpolation)</h4>
+    <p>{{getTechWithVersion()}}</p>
+  </div>
+
+  <div class="section">
+    <h4>Tech & Version (innerHTML Binding)</h4>
+    <div [innerHTML]="getTechWithVersion()"></div>
+  </div>
+
+  <div class="section">
+    <h5>Total of : {{GetTotal(15,8)}}</h5>
+  </div>
+
+  <div class="section">
+    <p>Calling SignUp Component From Main (App) Component:</p>
+    <app-sign-up></app-sign-up>
+  </div>
+
+</div>
