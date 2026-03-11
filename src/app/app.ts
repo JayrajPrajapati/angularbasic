@@ -24,4 +24,8 @@ export class App {
   {
     return a+b;
   }
+  callButtonEvent()
+  {
+    alert('Button Event Bind...');
+  }
 }
