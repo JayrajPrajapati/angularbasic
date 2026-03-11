@@ -27,5 +27,26 @@
    <div class="section">
     <p>Event Binding:</p>
     <button (click)="callButtonEvent()"> Click Event Binding</button>
+    <button (click)="counter('-')">-</button>
+    <span> {{count}} </span>>
+    <button (click)="counter('+')">+</button>
   </div>
+  <div class="section">
+    <p>Types of Event Binding:</p>
+    <input type="text" (input)="handleEvnet($event.type)">
+    <button (click)="handleEvnet($event.type)">Click Me</button>
+    <input type="text" (change)="handleEvnet($event.type)">
+     <input type="text" (focus)="handleEvnet($event.type)">
+      <input type="text" (blur)="handleEvnet($event.type)">
+       <select id="drpTypes" (change)="handleEvnet($event.type)">
+        <option>Select</option>
+        <option>input</option>
+        <option>click</option>
+        <option>change</option>
+        <option>focus</option>
+        <option>blur</option>
+       </select>
+  </div>
+   <button (click)="updateData(10,'Jayraj Chhaya')">Update Data</button>
+   <button (click)="handleButtonEvnet($event)">Update Data</button>
 </div>
