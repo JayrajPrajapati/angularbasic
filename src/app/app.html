@@ -1,57 +1,144 @@
 <div class="container">
 
+  <!-- Project Information -->
   <div class="section">
     <h1>Project Name : {{title()}}</h1>
     <h3>Angular Version : {{angularVersion}}</h3>
   </div>
 
+
+  <!-- String Interpolation Example -->
   <div class="section">
     <h4>Tech & Version (String Interpolation)</h4>
     <p>{{getTechWithVersion()}}</p>
   </div>
 
+
+  <!-- innerHTML Binding Example -->
   <div class="section">
     <h4>Tech & Version (innerHTML Binding)</h4>
     <div [innerHTML]="getTechWithVersion()"></div>
   </div>
 
+
+  <!-- Function Call Example -->
   <div class="section">
     <h5>Total of : {{GetTotal(15,8)}}</h5>
   </div>
 
+
+  <!-- Component Calling Example -->
   <div class="section">
     <p>Calling SignUp Component From Main (App) Component:</p>
     <app-sign-up></app-sign-up>
   </div>
 
-   <div class="section">
+
+  <!-- Event Binding -->
+  <div class="section">
     <p>Event Binding:</p>
-    <button (click)="callButtonEvent()"> Click Event Binding</button>
+
+    <button (click)="callButtonEvent()">Click Event Binding</button>
+
     <button (click)="counter('-')">-</button>
-    <span> {{count}} </span>>
+    <span>{{count}}</span>
     <button (click)="counter('+')">+</button>
   </div>
+
+
+  <!-- Multiple Event Types -->
   <div class="section">
     <p>Types of Event Binding:</p>
+
     <input type="text" (input)="handleEvnet($event.type)">
     <button (click)="handleEvnet($event.type)">Click Me</button>
     <input type="text" (change)="handleEvnet($event.type)">
-     <input type="text" (focus)="handleEvnet($event.type)">
-      <input type="text" (blur)="handleEvnet($event.type)">
-       <select id="drpTypes" (change)="handleEvnet($event.type)">
-        <option>Select</option>
-        <option>input</option>
-        <option>click</option>
-        <option>change</option>
-        <option>focus</option>
-        <option>blur</option>
-       </select>
+    <input type="text" (focus)="handleEvnet($event.type)">
+    <input type="text" (blur)="handleEvnet($event.type)">
+
+    <select (change)="handleEvnet($event.type)">
+      <option>Select</option>
+      <option>input</option>
+      <option>click</option>
+      <option>change</option>
+      <option>focus</option>
+      <option>blur</option>
+    </select>
+    <!-- Function Call + Console Example -->
+  <br>
+      <button (click)="updateData(10,'Jayraj Chhaya')">Check Console</button>
+      <button (click)="handleButtonEvnet($event)"> Get Pointer Event Data </button>
   </div>
-   <button (click)="updateData(10,'Jayraj Chhaya')">Check Console</button>
-   <button (click)="handleButtonEvnet($event)">Get Pointer Event Data</button>
-    <div class="section">
+
+  <!-- Property Binding -->
+  <div class="section">
     <p>Property Binding:</p>
-    <button [disabled]="btnDisableDynamic"> Disable Dyanmically</button>
-     <button (click)="btnToggle()"> Toggle via click event</button>
+
+    <button [disabled]="btnDisableDynamic">
+      Disable Dynamically
+    </button>
+
+    <button (click)="btnToggle()">
+      Toggle via click event
+    </button>
+  </div>
+
+
+  <!-- Angular Signals -->
+  <div class="section">
+    <p>Signal Example:</p>
+
+    <button (click)="updateSimplePropertyData()">
+      Simple Property Value
+    </button>
+
+    <h3>{{simplePropertyData}}</h3>
+
+    <button (click)="updateSinglePropertyData()">
+      Signal Property Value
+    </button>
+
+    <h3>{{signalPropertyData()}}</h3>
+
+  </div>
+  <!-- Computed Signals -->
+  <div class="section">
+    <p>Computed Signal Example:</p>
+    <button (click)="handleHeight()"> Update Height +10</button>
+    <h3>Area : {{area()}}</h3>
+    <h3>Height : {{height()}}</h3>
+  </div>
+ <!-- Effect Signals -->
+  <div class="section">
+    <p>Effect Signal Example:</p>
+    <button (click)="increaseSpeed()"> Increase Speed +10</button>
+    <h3 [style.color]="color" >Speed : {{speed()}}</h3>
+  </div>
+   <!-- Data Types in Signals -->
+  <div class="section">
+    <p>Data Types in Signal:</p>
+    <button (click)="getUpdatedUserData()"> Get Updated User Data</button>
+  </div>
+   <!-- Counter App with Signals -->
+  <div class="section counter-section">
+    <p>Counter App with Signal:</p>
+    <h3>{{counterApp()}}</h3>
+    <div class="counter-buttons">
+      <button (click)="decrementCounter()">-</button>
+      <button (click)="resetCounter()">Reset</button>
+      <button (click)="incrementCounter()">+</button>
+    </div>
+  </div>
+  <!-- Get & Set Input value via Signals -->
+  <div class="section">
+    <p>Get & Set Input value via Signal:</p>
+    <h3>InputValue : {{inputValue()}}</h3>
+    <input type="text" [value]="inputValue()" (input)="setInputValue($event.target.value)">
+    <button (click)="setResetInputValue()"> Set Reset Input Data</button>
+  </div>
+  <!-- Style add in Globally and Component wise -->
+   <div class="section">
+    <h2>App Component Header</h2>
+  <app-sign-up></app-sign-up>
   </div>
 </div>
