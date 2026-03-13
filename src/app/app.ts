@@ -232,4 +232,11 @@ export class App {
   {
     this.inputValue.set(val)
   }
+  //Control Flow Statement
+  isLogIn = signal(false);
+  show = signal(true);
+  handleLogin(status:boolean)
+  {
+    this.isLogIn.set(status)
+  }
 }

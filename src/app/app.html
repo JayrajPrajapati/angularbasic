@@ -141,4 +141,20 @@
     <h2>App Component Header</h2>
   <app-sign-up></app-sign-up>
   </div>
+  <!-- Control Flow Statement -->
+   <div class="section">
+    <h3>Control Flow Statement</h3>
+    <div>
+    @if(isLogIn())
+    {
+        <span>Welcome User!!!</span>
+        <button (click)="handleLogin(false)">Logout</button>
+    }@else
+    {
+        <span>Please Login</span>
+         <button (click)="handleLogin(true)">LogIn</button>
+    }
+    
+    </div>
+  </div>
 </div>
