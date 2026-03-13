@@ -239,4 +239,13 @@ export class App {
   {
     this.isLogIn.set(status)
   }
+   //Control Flow  for For loop Statement
+ languages:WritableSignal<string[]> = signal(['Angular','React Js','React Native','Vue JS','Node JS'])
+ languageDetail = signal([
+  {id: 1, name: 'Angular',developedBy: 'Google',latestVersion: 21},
+  {id: 2,name: 'React JS',developedBy: 'Meta (Facebook)',latestVersion: 19},
+  {id: 3,name: 'React Native',developedBy: 'Meta (Facebook)',latestVersion: 0.74},
+  {id: 4,name: 'Vue JS',developedBy: 'Evan You',latestVersion: 3},
+  {id: 5,name: 'Node JS',developedBy: 'Ryan Dahl',latestVersion: 22}
+]);
 }

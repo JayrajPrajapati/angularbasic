@@ -157,4 +157,33 @@
     
     </div>
   </div>
+   <!-- Control Flow for Forloop Statement -->
+   <div class="section">
+    <h3>Control Flow for Forloop Statement</h3>
+    <div>
+      <ul>
+    @for(language of languages();track language)
+    {
+       <li>{{language}}</li>
+    }
+     </ul>
+    <hr>
+   <ul class="language-list">
+      @for(language of languageDetail(); track language.id)
+      {
+        <li class="language-row" [style.backgroundColor]="$odd?'pink':'lightblue'">
+          <span class="lang-id">Id : {{language.id}}</span>
+          <span class="lang-name">Name : {{language.name}}</span>
+          <span class="lang-dev">Developed By : {{language.developedBy}}</span>
+          <span class="lang-version">Version : {{language.latestVersion}}</span>
+          @if($first){<span style="color:red;">First Element</span>}
+          @if($last){<span style="color:olivedrab;">Last Element</span>}
+          <hr>
+          <span>@if($count==$index+1){<span>Total User : {{$count}}</span>}</span>
+        </li>
+      }
+    </ul>
+   
+    </div>
+  </div>
 </div>
