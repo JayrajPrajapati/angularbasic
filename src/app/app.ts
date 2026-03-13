@@ -1,4 +1,4 @@
-import { Component, computed, effect, signal } from '@angular/core';
+import { Component, computed, effect, signal, WritableSignal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { SignUp } from './componenets/sign-up/sign-up';
 
@@ -197,4 +197,13 @@ export class App {
     });
   }
 
+  //Data Types in Signal
+  user:WritableSignal<string[]> = signal(['Angular','React Js','React Native'])
+  getUpdatedUserData()
+  {
+    console.log("Old Value "+this.user());
+    this.user.update((item)=>[...item,'Vue Js'])
+    console.log("Updated value" + this.user());
+    
+  }
 }
