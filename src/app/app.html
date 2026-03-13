@@ -108,5 +108,10 @@
     <h3>Area : {{area()}}</h3>
     <h3>Height : {{height()}}</h3>
   </div>
-
+ <!-- Effect Signals -->
+  <div class="section">
+    <p>Effect Signal Example:</p>
+    <button (click)="increaseSpeed()"> Increase Speed +10</button>
+    <h3 [style.color]="color" >Speed : {{speed()}}</h3>
+  </div>
 </div>

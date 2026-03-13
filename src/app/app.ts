@@ -124,21 +124,21 @@ export class App {
     Runs automatically when signal changes
   -----------------------------------------*/
 
-  constructor() {
-    effect(() => {
+  // constructor() {
+  //   effect(() => {
 
-      console.log("Simple Property", this.simplePropertyData);
+  //     console.log("Simple Property", this.simplePropertyData);
 
-      console.log("Signal Property", this.signalPropertyData());
+  //     console.log("Signal Property", this.signalPropertyData());
 
-      // Reset signal when value reaches 5
-      if (this.signalPropertyData() === 5) {
-        this.signalPropertyData.set(0);
-        console.log("Signal Property Reset", this.signalPropertyData());
-      }
+  //     // Reset signal when value reaches 5
+  //     if (this.signalPropertyData() === 5) {
+  //       this.signalPropertyData.set(0);
+  //       console.log("Signal Property Reset", this.signalPropertyData());
+  //     }
 
-    });
-  }
+  //   });
+  // }
 
 
   /*-----------------------------------------
@@ -162,4 +162,39 @@ export class App {
   {
     this.height.set(this.height()+10);
   }
+  //Effect Signal
+  speed = signal(0);
+  color = "blue";
+  increaseSpeed()
+  {
+    this.speed.set(this.speed()+10);
+  }
+   constructor() {
+    effect(() => {
+      console.log("Simple Property", this.simplePropertyData);
+      console.log("Signal Property", this.signalPropertyData());
+
+      // Reset signal when value reaches 5
+      if (this.signalPropertyData() === 5) {
+        this.signalPropertyData.set(0);
+        console.log("Signal Property Reset", this.signalPropertyData());
+      }
+
+      //Effect Signal for Speed
+      if (this.speed()>0 && this.speed()<40) {
+        this.color='green';
+      }
+      if (this.speed()>=40 && this.speed()<80) {
+        this.color='blue';
+      }
+      if (this.speed()>=80 && this.speed()<120) {
+        this.color='orange';
+      }
+      if (this.speed()>=120) {
+        this.color='red';
+      }
+      console.log("Speed Increased", this.speed());
+    });
+  }
+
 }
