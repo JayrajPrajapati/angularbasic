@@ -85,3 +85,7 @@ p{
 .counter-buttons button:nth-child(2):hover{
     background-color: #e68900;
 }
+
+h2{
+    color: #4b17d8;
+}

@@ -222,4 +222,14 @@ export class App {
       this.counterApp.update((val)=>val-1);
     }
   }
+  //Get & Set Input value via Signals
+  inputValue :WritableSignal<string>= signal<string>("Intialization");
+  setResetInputValue()
+  {
+    this.inputValue.set("I'm Default Input Value");
+  }
+  setInputValue(val:string)
+  {
+    this.inputValue.set(val)
+  }
 }

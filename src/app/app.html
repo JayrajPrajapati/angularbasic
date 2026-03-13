@@ -129,4 +129,16 @@
       <button (click)="incrementCounter()">+</button>
     </div>
   </div>
+  <!-- Get & Set Input value via Signals -->
+  <div class="section">
+    <p>Get & Set Input value via Signal:</p>
+    <h3>InputValue : {{inputValue()}}</h3>
+    <input type="text" [value]="inputValue()" (input)="setInputValue($event.target.value)">
+    <button (click)="setResetInputValue()"> Set Reset Input Data</button>
+  </div>
+  <!-- Style add in Globally and Component wise -->
+   <div class="section">
+    <h2>App Component Header</h2>
+  <app-sign-up></app-sign-up>
+  </div>
 </div>
