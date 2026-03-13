@@ -47,6 +47,11 @@
         <option>blur</option>
        </select>
   </div>
-   <button (click)="updateData(10,'Jayraj Chhaya')">Update Data</button>
-   <button (click)="handleButtonEvnet($event)">Update Data</button>
+   <button (click)="updateData(10,'Jayraj Chhaya')">Check Console</button>
+   <button (click)="handleButtonEvnet($event)">Get Pointer Event Data</button>
+    <div class="section">
+    <p>Property Binding:</p>
+    <button [disabled]="btnDisableDynamic"> Disable Dyanmically</button>
+     <button (click)="btnToggle()"> Toggle via click event</button>
+  </div>
 </div>

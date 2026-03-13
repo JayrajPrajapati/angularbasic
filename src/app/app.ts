@@ -56,4 +56,9 @@ console.log(this.sum(10,20));
 console.log(event);
 
 }
+//Property Binding
+btnDisableDynamic=true;
+btnToggle(){
+  this.btnDisableDynamic =! this.btnDisableDynamic;
+}
 }
