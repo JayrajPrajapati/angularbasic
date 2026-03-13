@@ -1,4 +1,4 @@
-import { Component, effect, signal } from '@angular/core';
+import { Component, computed, effect, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { SignUp } from './componenets/sign-up/sign-up';
 
@@ -153,4 +153,13 @@ export class App {
     this.signalPropertyData.set(this.signalPropertyData() + 1);
   }
 
+  //Computed Signal
+  height = signal(100);
+  width = signal(20);
+  area = computed(()=> this.height()*this.width())
+  
+  handleHeight()
+  {
+    this.height.set(this.height()+10);
+  }
 }
