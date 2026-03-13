@@ -182,8 +182,46 @@
           <span>@if($count==$index+1){<span>Total User : {{$count}}</span>}</span>
         </li>
       }
-    </ul>
-   
+    </ul>   
     </div>
   </div>
+   <!-- Control Flow for Switch Statement -->
+   <div class="section switch-section">
+  <h3>Control Flow for Switch Statement</h3>
+
+  <div class="switch-container">
+
+    <select (change)="handleSwitch($event)" class="status-select">
+      <option value="select">Select</option>
+      <option value="notStarted">Not Started</option>
+      <option value="loading">Loading In Progress</option>
+      <option value="success">Success</option>
+      <option value="error">Error</option>
+    </select>
+
+    @switch(switchStatus())
+    {
+      @case('notStarted'){
+        <span class="status not-started">No Update yet</span>
+      }
+
+      @case('loading'){
+        <span class="status loading">Loading in progress</span>
+      }
+
+      @case('success'){
+        <span class="status success">Success</span>
+      }
+
+      @case('error'){
+        <span class="status error">Error</span>
+      }
+
+      @default{
+        <span class="status default">Please Select Value</span>
+      }
+    }
+
+  </div>
+</div>
 </div>

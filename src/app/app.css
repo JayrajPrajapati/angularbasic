@@ -129,3 +129,51 @@ h2{
     border-radius: 4px;
     font-size: 13px;
 }
+/* Container for switch demo */
+.switch-section {
+    background-color: #f9fafc;
+}
+
+/* Align dropdown and message */
+.switch-container{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+/* Dropdown style */
+.status-select{
+    padding: 6px 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+/* Base status style */
+.status{
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 4px;
+}
+
+/* Status colors */
+.not-started{
+    color: #6c757d;
+}
+
+.loading{
+    color: #ff9800;
+}
+
+.success{
+    color: #2e8b57;
+}
+
+.error{
+    color: #e53935;
+}
+
+.default{
+    color: #007acc;
+}

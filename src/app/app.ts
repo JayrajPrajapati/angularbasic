@@ -248,4 +248,12 @@ export class App {
   {id: 4,name: 'Vue JS',developedBy: 'Evan You',latestVersion: 3},
   {id: 5,name: 'Node JS',developedBy: 'Ryan Dahl',latestVersion: 22}
 ]);
+
+//Control Flow for Switch Statement
+switchStatus = signal("");
+handleSwitch(event:Event)
+{
+  const target = event.target as HTMLSelectElement;
+  this.switchStatus.set(target.value);
+}
 }
