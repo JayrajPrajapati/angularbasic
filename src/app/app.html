@@ -1,57 +1,105 @@
 <div class="container">
 
+  <!-- Project Information -->
   <div class="section">
     <h1>Project Name : {{title()}}</h1>
     <h3>Angular Version : {{angularVersion}}</h3>
   </div>
 
+
+  <!-- String Interpolation Example -->
   <div class="section">
     <h4>Tech & Version (String Interpolation)</h4>
     <p>{{getTechWithVersion()}}</p>
   </div>
 
+
+  <!-- innerHTML Binding Example -->
   <div class="section">
     <h4>Tech & Version (innerHTML Binding)</h4>
     <div [innerHTML]="getTechWithVersion()"></div>
   </div>
 
+
+  <!-- Function Call Example -->
   <div class="section">
     <h5>Total of : {{GetTotal(15,8)}}</h5>
   </div>
 
+
+  <!-- Component Calling Example -->
   <div class="section">
     <p>Calling SignUp Component From Main (App) Component:</p>
     <app-sign-up></app-sign-up>
   </div>
 
-   <div class="section">
+
+  <!-- Event Binding -->
+  <div class="section">
     <p>Event Binding:</p>
-    <button (click)="callButtonEvent()"> Click Event Binding</button>
+
+    <button (click)="callButtonEvent()">Click Event Binding</button>
+
     <button (click)="counter('-')">-</button>
-    <span> {{count}} </span>>
+    <span>{{count}}</span>
     <button (click)="counter('+')">+</button>
   </div>
+
+
+  <!-- Multiple Event Types -->
   <div class="section">
     <p>Types of Event Binding:</p>
+
     <input type="text" (input)="handleEvnet($event.type)">
     <button (click)="handleEvnet($event.type)">Click Me</button>
     <input type="text" (change)="handleEvnet($event.type)">
-     <input type="text" (focus)="handleEvnet($event.type)">
-      <input type="text" (blur)="handleEvnet($event.type)">
-       <select id="drpTypes" (change)="handleEvnet($event.type)">
-        <option>Select</option>
-        <option>input</option>
-        <option>click</option>
-        <option>change</option>
-        <option>focus</option>
-        <option>blur</option>
-       </select>
+    <input type="text" (focus)="handleEvnet($event.type)">
+    <input type="text" (blur)="handleEvnet($event.type)">
+
+    <select (change)="handleEvnet($event.type)">
+      <option>Select</option>
+      <option>input</option>
+      <option>click</option>
+      <option>change</option>
+      <option>focus</option>
+      <option>blur</option>
+    </select>
+    <!-- Function Call + Console Example -->
+  <br>
+      <button (click)="updateData(10,'Jayraj Chhaya')">Check Console</button>
+      <button (click)="handleButtonEvnet($event)"> Get Pointer Event Data </button>
   </div>
-   <button (click)="updateData(10,'Jayraj Chhaya')">Check Console</button>
-   <button (click)="handleButtonEvnet($event)">Get Pointer Event Data</button>
-    <div class="section">
+
+  <!-- Property Binding -->
+  <div class="section">
     <p>Property Binding:</p>
-    <button [disabled]="btnDisableDynamic"> Disable Dyanmically</button>
-     <button (click)="btnToggle()"> Toggle via click event</button>
+
+    <button [disabled]="btnDisableDynamic">
+      Disable Dynamically
+    </button>
+
+    <button (click)="btnToggle()">
+      Toggle via click event
+    </button>
   </div>
+
+
+  <!-- Angular Signals -->
+  <div class="section">
+    <p>Signal Example:</p>
+
+    <button (click)="updateSimplePropertyData()">
+      Simple Property Value
+    </button>
+
+    <h3>{{simplePropertyData}}</h3>
+
+    <button (click)="updateSinglePropertyData()">
+      Signal Property Value
+    </button>
+
+    <h3>{{signalPropertyData()}}</h3>
+
+  </div>
+
 </div>
