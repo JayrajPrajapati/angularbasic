@@ -206,4 +206,20 @@ export class App {
     console.log("Updated value" + this.user());
     
   }
+  //Counter in Signal
+  counterApp:WritableSignal<number>=signal<number>(0);
+  incrementCounter()
+  {
+    this.counterApp.update((val)=>val+1);
+  }
+  resetCounter()
+  {
+    this.counterApp.set(0);
+  }
+  decrementCounter()
+  {
+    if (this.counterApp()>0) {
+      this.counterApp.update((val)=>val-1);
+    }
+  }
 }

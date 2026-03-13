@@ -119,4 +119,14 @@
     <p>Data Types in Signal:</p>
     <button (click)="getUpdatedUserData()"> Get Updated User Data</button>
   </div>
+   <!-- Counter App with Signals -->
+  <div class="section counter-section">
+    <p>Counter App with Signal:</p>
+    <h3>{{counterApp()}}</h3>
+    <div class="counter-buttons">
+      <button (click)="decrementCounter()">-</button>
+      <button (click)="resetCounter()">Reset</button>
+      <button (click)="incrementCounter()">+</button>
+    </div>
+  </div>
 </div>
