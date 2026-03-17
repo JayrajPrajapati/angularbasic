@@ -271,4 +271,15 @@ userObj = signal({
 updateUserObj(key:string,val:string){
   this.userObj.update((item)=>({...item,[key]:val}))
 }
+
+//Get & Set Method for Signal | Two way Binding
+getterSetter = signal('Getter & Setter Method for Two way Binding');
+get getterSetterVal()
+{
+  return this.getterSetter();
+}
+set getterSetterVal(val:string)
+{
+  this.getterSetter.set(val);
+}
 }

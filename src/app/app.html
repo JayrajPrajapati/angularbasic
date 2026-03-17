@@ -245,5 +245,11 @@
        <p>{{userObj().contactNo}}</p>
       <input type="text" [value]="userObj().contactNo" (input)="updateUserObj('contactNo',$event.target.value)">
   </div>
-  
+
+  <!-- Get & Set Method for Signal | Two way Binding-->
+  <div class="section">
+    <p>Getter & Setter Method for Signal | Two way Binding:</p>
+    <h3>Two Way Binding : {{getterSetter()}}</h3>
+    <input type="text" [(ngModel)]="getterSetter">
+  </div>
 </div>
