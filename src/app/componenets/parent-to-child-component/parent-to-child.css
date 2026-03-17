@@ -1,0 +1,11 @@
+.parent-title {
+    font-weight: bold
+}
+
+.parent-title .value {
+    font-style: italic;
+    font-weight: normal
+}
+h2{
+    color: #ffb52c;
+}

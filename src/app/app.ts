@@ -1,12 +1,13 @@
 import { Component, computed, effect, signal, WritableSignal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { SignUp } from './componenets/sign-up/sign-up';
+import { SignUp } from './componenets/sign-up-component/sign-up';
 import { FormsModule } from '@angular/forms';
 import { single } from 'rxjs';
+import { ChildComponent } from './componenets/child-component/child-component';
+import { ParentToChild } from './componenets/parent-to-child-component/parent-to-child';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, SignUp, FormsModule],
+  imports: [SignUp, FormsModule, ChildComponent, ParentToChild],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -273,22 +274,33 @@ export class App {
   }
   //ToDo List with Singnals
   tasks = signal([
-  { id: 1, title: "Interview", completed: false },
-  { id: 2, title: "Coding Practice", completed: false },
-  { id: 3, title: "Client Meeting", completed: false },
-  { id: 4, title: "Project Deployment", completed: false },
-  { id: 5, title: "Learn Angular Signals", completed: false }
-])
+    { id: 1, title: "Interview", completed: false },
+    { id: 2, title: "Coding Practice", completed: false },
+    { id: 3, title: "Client Meeting", completed: false },
+    { id: 4, title: "Project Deployment", completed: false },
+    { id: 5, title: "Learn Angular Signals", completed: false }
+  ])
   taskTitle = signal('');
   addTask() {
     if (this.taskTitle()) {
       const nextId = this.tasks().length ? Math.max(...this.tasks().map(t => t.id)) + 1 : 1;
       this.tasks.update((item) => (
-        [...item, { id:nextId, title: this.taskTitle(), completed: false }]));
+        [...item, { id: nextId, title: this.taskTitle(), completed: false }]));
       this.taskTitle.set('');
     }
   }
   deleteTask(id: number) {
     this.tasks.update((tasks) => tasks.filter((task) => task.id != id))
+  }
+
+  //Parent to Child Data Binding
+  propFromParent = signal('Parent Component Data Pass into Child Component');
+  languagesList = signal(['Angular', 'React Js', 'React Native', 'Vue JS', 'Node JS'])
+  newLanguage = signal('');
+  addNewLanguage() {
+    if (this.newLanguage()) {
+      this.languagesList.update((data) => ([...data, this.newLanguage()]))
+      this.newLanguage.set('')
+    }
   }
 }
