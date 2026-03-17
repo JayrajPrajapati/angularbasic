@@ -252,4 +252,19 @@
     <h3>Two Way Binding : {{getterSetter()}}</h3>
     <input type="text" [(ngModel)]="getterSetter">
   </div>
+  <!-- To Do List with Signals-->
+  <div class="todo-wrapper">
+    <p>To Do List with Signals:</p>
+    <input type="text" [value]="taskTitle()" placeholder="Add new task" (input)="taskTitle.set($event.target.value)">
+    <button (click)="addTask()"> Add Task</button>
+    <ul>
+    @for(task of tasks(); track task.id)
+    {
+      <li><span>{{task.id}}</span><span>{{task.title}}</span><span><button (click)="deleteTask(task.id)">Delete</button></span></li>
+    }
+    @empty{
+      <span>No Task Found</span>
+    }
+    </ul>
+  </div>
 </div>

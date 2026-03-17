@@ -177,3 +177,13 @@ h2{
 .default{
     color: #007acc;
 }
+/* TO Do List CSS */
+.todo-wrapper{margin:auto;padding:16px;border:1px solid #ddd;border-radius:10px;background:#fafafa;font-family:sans-serif}
+.todo-wrapper input{width:89%;padding:8px;border:1px solid #ccc;border-radius:6px;margin-right:8px}
+.todo-wrapper button{padding:8px 12px;border:none;border-radius:6px;background:#007bff;color:#fff;cursor:pointer}
+.todo-wrapper button:hover{background:#0056b3}
+.todo-wrapper ul{list-style:none;padding:0;margin-top:12px}
+.todo-wrapper li{display:flex;justify-content:space-between;align-items:center;padding:8px 10px;border:1px solid #eee;border-radius:6px;margin-bottom:6px;background:#fff}
+.todo-wrapper li span:first-child{font-weight:bold;margin-right:8px}
+.todo-wrapper li button{background:#dc3545}
+.todo-wrapper li button:hover{background:#a71d2a}
