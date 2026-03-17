@@ -4,10 +4,11 @@ import { FormsModule } from '@angular/forms';
 import { single } from 'rxjs';
 import { ChildComponent } from './componenets/child-component/child-component';
 import { ParentToChild } from './componenets/parent-to-child-component/parent-to-child';
+import { ChildToParentComponent } from './componenets/child-to-parent-component/child-to-parent-component';
 
 @Component({
   selector: 'app-root',
-  imports: [SignUp, FormsModule, ChildComponent, ParentToChild],
+  imports: [SignUp, FormsModule, ChildComponent, ParentToChild, ChildToParentComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -302,5 +303,15 @@ export class App {
       this.languagesList.update((data) => ([...data, this.newLanguage()]))
       this.newLanguage.set('')
     }
+  }
+
+  //Child to Parent Data Binding
+  selectedLanguageName = signal('');
+  selectedLanguage(language: string) {
+    this.selectedLanguageName.set(language);
+  }
+  deleteLanguage(language: string) {
+    this.languagesList.update((data) => data.filter((item) => item != language))
+    this.selectedLanguageName.set('')
   }
 }

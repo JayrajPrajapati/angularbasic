@@ -1,0 +1,8 @@
+.child-parent-wrapper{max-width:420px;margin:auto;padding:16px;border:1px solid #e0e0e0;border-radius:10px;background:#fafafa;font-family:sans-serif}
+.child-parent-wrapper h3{font-weight:bold}
+.child-parent-wrapper input{width:65%;padding:8px;border:1px solid #ccc;border-radius:6px;margin-right:8px}
+.child-parent-wrapper button{padding:6px 10px;border:none;border-radius:6px;background:#007bff;color:#fff;cursor:pointer;margin-left:5px}
+.child-parent-wrapper button:hover{background:#0056b3}
+.child-parent-wrapper .list{display:flex;justify-content:space-between;align-items:center;padding:8px;border:1px solid #eee;border-radius:6px;margin-top:6px;background:#fff}
+.child-parent-wrapper .list button:last-child{background:#dc3545}
+.child-parent-wrapper .list button:last-child:hover{background:#a71d2a}

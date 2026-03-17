@@ -273,11 +273,26 @@
     <p>Parent to Child Data Binding:</p>
     <app-child-component [propFromParent]="propFromParent()"></app-child-component>
     <hr>
-    <input type="text" (input)="newLanguage.set($event.target.value)" [value] ="newLanguage()" placeholder="Enter a New Language">
+    <input type="text" (input)="newLanguage.set($event.target.value)" [value]="newLanguage()"
+      placeholder="Enter a New Language">
     <button (click)="addNewLanguage()">Add New Language</button>
 
     @for(language of languagesList(); track language){
     <app-parent-to-child [newLanguage]="language"></app-parent-to-child>
+    }
+  </div>
+  <!-- Child to Parent Data Binding -->
+  <div class="todo-wrapper">
+    <p>Child to Parent Data Binding:</p>
+    <h3>Selected Language : {{selectedLanguageName()}}</h3>
+    <br>
+
+    <input type="text" (input)="newLanguage.set($event.target.value)" placeholder="Enter a New Language" [value]="newLanguage()">
+    <button (click)="addNewLanguage()">Add New Language</button>
+
+    @for(language of languagesList(); track language){
+    <app-child-to-parent-component [newLanguage]="language" (selectedLanguage)="selectedLanguage($event)"
+      (deleteLanguageByName)="deleteLanguage($event)"></app-child-to-parent-component>
     }
   </div>
 </div>
