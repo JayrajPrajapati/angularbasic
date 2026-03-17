@@ -65,9 +65,9 @@
       <option>blur</option>
     </select>
     <!-- Function Call + Console Example -->
-  <br>
-      <button (click)="updateData(10,'Jayraj Chhaya')">Check Console</button>
-      <button (click)="handleButtonEvnet($event)"> Get Pointer Event Data </button>
+    <br>
+    <button (click)="updateData(10,'Jayraj Chhaya')">Check Console</button>
+    <button (click)="handleButtonEvnet($event)"> Get Pointer Event Data </button>
   </div>
 
   <!-- Property Binding -->
@@ -108,18 +108,18 @@
     <h3>Area : {{area()}}</h3>
     <h3>Height : {{height()}}</h3>
   </div>
- <!-- Effect Signals -->
+  <!-- Effect Signals -->
   <div class="section">
     <p>Effect Signal Example:</p>
     <button (click)="increaseSpeed()"> Increase Speed +10</button>
-    <h3 [style.color]="color" >Speed : {{speed()}}</h3>
+    <h3 [style.color]="color">Speed : {{speed()}}</h3>
   </div>
-   <!-- Data Types in Signals -->
+  <!-- Data Types in Signals -->
   <div class="section">
     <p>Data Types in Signal:</p>
     <button (click)="getUpdatedUserData()"> Get Updated User Data</button>
   </div>
-   <!-- Counter App with Signals -->
+  <!-- Counter App with Signals -->
   <div class="section counter-section">
     <p>Counter App with Signal:</p>
     <h3>{{counterApp()}}</h3>
@@ -137,40 +137,40 @@
     <button (click)="setResetInputValue()"> Set Reset Input Data</button>
   </div>
   <!-- Style add in Globally and Component wise -->
-   <div class="section">
+  <div class="section">
     <h2>App Component Header</h2>
-  <app-sign-up></app-sign-up>
+    <app-sign-up></app-sign-up>
   </div>
   <!-- Control Flow Statement -->
-   <div class="section">
+  <div class="section">
     <h3>Control Flow Statement</h3>
     <div>
-    @if(isLogIn())
-    {
-        <span>Welcome User!!!</span>
-        <button (click)="handleLogin(false)">Logout</button>
-    }@else
-    {
-        <span>Please Login</span>
-         <button (click)="handleLogin(true)">LogIn</button>
-    }
-    
+      @if(isLogIn())
+      {
+      <span>Welcome User!!!</span>
+      <button (click)="handleLogin(false)">Logout</button>
+      }@else
+      {
+      <span>Please Login</span>
+      <button (click)="handleLogin(true)">LogIn</button>
+      }
+
     </div>
   </div>
-   <!-- Control Flow for Forloop Statement -->
-   <div class="section">
+  <!-- Control Flow for Forloop Statement -->
+  <div class="section">
     <h3>Control Flow for Forloop Statement</h3>
     <div>
       <ul>
-    @for(language of languages();track language)
-    {
-       <li>{{language}}</li>
-    }
-     </ul>
-    <hr>
-   <ul class="language-list">
-      @for(language of languageDetail(); track language.id)
-      {
+        @for(language of languages();track language)
+        {
+        <li>{{language}}</li>
+        }
+      </ul>
+      <hr>
+      <ul class="language-list">
+        @for(language of languageDetail(); track language.id)
+        {
         <li class="language-row" [style.backgroundColor]="$odd?'pink':'lightblue'">
           <span class="lang-id">Id : {{language.id}}</span>
           <span class="lang-name">Name : {{language.name}}</span>
@@ -181,69 +181,69 @@
           <hr>
           <span>@if($count==$index+1){<span>Total User : {{$count}}</span>}</span>
         </li>
-      }
-    </ul>   
+        }
+      </ul>
     </div>
   </div>
-   <!-- Control Flow for Switch Statement -->
-   <div class="section switch-section">
-  <h3>Control Flow for Switch Statement</h3>
+  <!-- Control Flow for Switch Statement -->
+  <div class="section switch-section">
+    <h3>Control Flow for Switch Statement</h3>
 
-  <div class="switch-container">
+    <div class="switch-container">
 
-    <select (change)="handleSwitch($event)" class="status-select">
-      <option value="select">Select</option>
-      <option value="notStarted">Not Started</option>
-      <option value="loading">Loading In Progress</option>
-      <option value="success">Success</option>
-      <option value="error">Error</option>
-    </select>
+      <select (change)="handleSwitch($event)" class="status-select">
+        <option value="select">Select</option>
+        <option value="notStarted">Not Started</option>
+        <option value="loading">Loading In Progress</option>
+        <option value="success">Success</option>
+        <option value="error">Error</option>
+      </select>
 
-    @switch(switchStatus())
-    {
+      @switch(switchStatus())
+      {
       @case('notStarted'){
-        <span class="status not-started">No Update yet</span>
+      <span class="status not-started">No Update yet</span>
       }
 
       @case('loading'){
-        <span class="status loading">Loading in progress</span>
+      <span class="status loading">Loading in progress</span>
       }
 
       @case('success'){
-        <span class="status success">Success</span>
+      <span class="status success">Success</span>
       }
 
       @case('error'){
-        <span class="status error">Error</span>
+      <span class="status error">Error</span>
       }
 
       @default{
-        <span class="status default">Please Select Value</span>
+      <span class="status default">Please Select Value</span>
       }
-    }
+      }
 
+    </div>
   </div>
-</div>
-<div class="section">
+  <div class="section">
     <p>Two way Data Binding via NgModel:</p>
     <!-- Example 1: Using Signal (Manual Binding) -->
     <h3>Access as a Signal Property: {{withoutNgModel()}}</h3>
     <!-- Two-Way Binding using Signal (manual: value + input event) -->
     <input type="text" [value]="withoutNgModel()" (input)="withoutNgModel.set($event.target.value)">
     <hr>
-     <!-- Example 2: Using NgModel (Automatic Two-Way Binding) -->
+    <!-- Example 2: Using NgModel (Automatic Two-Way Binding) -->
     <h3>Access as a Simple Property with Ng Model : {{withNgModel}}</h3>
     <!-- Two-Way Binding using NgModel (automatic property + event binding) -->
     <!-- NgModel provides: - Property Binding + Event Binding automatically, No need to manually handle events-->
-    <input type="text" [(ngModel)]="withNgModel"> 
+    <input type="text" [(ngModel)]="withNgModel">
 
- <h3>Multiple Value set with Common Function</h3>
-     <p>{{userObj().name}}</p>
-      <input type="text" [value]="userObj().name" (input)="updateUserObj('name',$event.target.value)">
-      <p>{{userObj().experience}}</p>
-      <input type="text" [value]="userObj().experience" (input)="updateUserObj('experience',$event.target.value)">
-       <p>{{userObj().contactNo}}</p>
-      <input type="text" [value]="userObj().contactNo" (input)="updateUserObj('contactNo',$event.target.value)">
+    <h3>Multiple Value set with Common Function</h3>
+    <p>{{userObj().name}}</p>
+    <input type="text" [value]="userObj().name" (input)="updateUserObj('name',$event.target.value)">
+    <p>{{userObj().experience}}</p>
+    <input type="text" [value]="userObj().experience" (input)="updateUserObj('experience',$event.target.value)">
+    <p>{{userObj().contactNo}}</p>
+    <input type="text" [value]="userObj().contactNo" (input)="updateUserObj('contactNo',$event.target.value)">
   </div>
 
   <!-- Get & Set Method for Signal | Two way Binding-->
@@ -258,13 +258,26 @@
     <input type="text" [value]="taskTitle()" placeholder="Add new task" (input)="taskTitle.set($event.target.value)">
     <button (click)="addTask()"> Add Task</button>
     <ul>
-    @for(task of tasks(); track task.id)
-    {
-      <li><span>{{task.id}}</span><span>{{task.title}}</span><span><button (click)="deleteTask(task.id)">Delete</button></span></li>
-    }
-    @empty{
+      @for(task of tasks(); track task.id)
+      {
+      <li><span>{{task.id}}</span><span>{{task.title}}</span><span><button
+            (click)="deleteTask(task.id)">Delete</button></span></li>
+      }
+      @empty{
       <span>No Task Found</span>
-    }
+      }
     </ul>
+  </div>
+  <!-- Parent to Child Data Binding-->
+  <div class="todo-wrapper">
+    <p>Parent to Child Data Binding:</p>
+    <app-child-component [propFromParent]="propFromParent()"></app-child-component>
+    <hr>
+    <input type="text" (input)="newLanguage.set($event.target.value)" [value] ="newLanguage()" placeholder="Enter a New Language">
+    <button (click)="addNewLanguage()">Add New Language</button>
+
+    @for(language of languagesList(); track language){
+    <app-parent-to-child [newLanguage]="language"></app-parent-to-child>
+    }
   </div>
 </div>
