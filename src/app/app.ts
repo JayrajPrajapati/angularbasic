@@ -1,10 +1,11 @@
 import { Component, computed, effect, signal, WritableSignal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { SignUp } from './componenets/sign-up/sign-up';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, SignUp],
+  imports: [RouterOutlet, SignUp,FormsModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -255,5 +256,30 @@ handleSwitch(event:Event)
 {
   const target = event.target as HTMLSelectElement;
   this.switchStatus.set(target.value);
+}
+//TWO-WAY DATA BINDING EXAMPLES
+
+// Signal-based binding (manual approach)
+withoutNgModel = signal('Without NgModel (using Signal)');
+// Simple property binding using NgModel
+withNgModel: string = 'With NgModel (without Signal)';
+userObj = signal({
+  name:'Developer',
+  experience :5,
+  contactNo:'7778523610'
+});
+updateUserObj(key:string,val:string){
+  this.userObj.update((item)=>({...item,[key]:val}))
+}
+
+//Get & Set Method for Signal | Two way Binding
+getterSetter = signal('Getter & Setter Method for Two way Binding');
+get getterSetterVal()
+{
+  return this.getterSetter();
+}
+set getterSetterVal(val:string)
+{
+  this.getterSetter.set(val);
 }
 }

@@ -224,4 +224,32 @@
 
   </div>
 </div>
+<div class="section">
+    <p>Two way Data Binding via NgModel:</p>
+    <!-- Example 1: Using Signal (Manual Binding) -->
+    <h3>Access as a Signal Property: {{withoutNgModel()}}</h3>
+    <!-- Two-Way Binding using Signal (manual: value + input event) -->
+    <input type="text" [value]="withoutNgModel()" (input)="withoutNgModel.set($event.target.value)">
+    <hr>
+     <!-- Example 2: Using NgModel (Automatic Two-Way Binding) -->
+    <h3>Access as a Simple Property with Ng Model : {{withNgModel}}</h3>
+    <!-- Two-Way Binding using NgModel (automatic property + event binding) -->
+    <!-- NgModel provides: - Property Binding + Event Binding automatically, No need to manually handle events-->
+    <input type="text" [(ngModel)]="withNgModel"> 
+
+ <h3>Multiple Value set with Common Function</h3>
+     <p>{{userObj().name}}</p>
+      <input type="text" [value]="userObj().name" (input)="updateUserObj('name',$event.target.value)">
+      <p>{{userObj().experience}}</p>
+      <input type="text" [value]="userObj().experience" (input)="updateUserObj('experience',$event.target.value)">
+       <p>{{userObj().contactNo}}</p>
+      <input type="text" [value]="userObj().contactNo" (input)="updateUserObj('contactNo',$event.target.value)">
+  </div>
+
+  <!-- Get & Set Method for Signal | Two way Binding-->
+  <div class="section">
+    <p>Getter & Setter Method for Signal | Two way Binding:</p>
+    <h3>Two Way Binding : {{getterSetter()}}</h3>
+    <input type="text" [(ngModel)]="getterSetter">
+  </div>
 </div>
