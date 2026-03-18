@@ -5,10 +5,12 @@ import { single } from 'rxjs';
 import { ChildComponent } from './componenets/child-component/child-component';
 import { ParentToChild } from './componenets/parent-to-child-component/parent-to-child';
 import { ChildToParentComponent } from './componenets/child-to-parent-component/child-to-parent-component';
+import { DisplayComponent } from './componenets/displayComponent/display-component/display-component';
+import { ControlCounterComponent } from './componenets/control-counter-component/control-counter-component';
 
 @Component({
   selector: 'app-root',
-  imports: [SignUp, FormsModule, ChildComponent, ParentToChild, ChildToParentComponent],
+  imports: [SignUp, FormsModule, ChildComponent, ParentToChild, ChildToParentComponent,DisplayComponent,ControlCounterComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
