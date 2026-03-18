@@ -7,10 +7,11 @@ import { ParentToChild } from './componenets/parent-to-child-component/parent-to
 import { ChildToParentComponent } from './componenets/child-to-parent-component/child-to-parent-component';
 import { DisplayComponent } from './componenets/displayComponent/display-component/display-component';
 import { ControlCounterComponent } from './componenets/control-counter-component/control-counter-component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [SignUp, FormsModule, ChildComponent, ParentToChild, ChildToParentComponent,DisplayComponent,ControlCounterComponent],
+  imports: [SignUp, FormsModule, ChildComponent, ParentToChild, ChildToParentComponent,DisplayComponent,ControlCounterComponent,CommonModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -316,4 +317,12 @@ export class App {
     this.languagesList.update((data) => data.filter((item) => item != language))
     this.selectedLanguageName.set('')
   }
+   //Pipe 
+   topicWithProperty = "Pipe with Property";
+   topicWithSignal = signal("Pipe with Signal");
+
+   inputTitle = signal('');
+   todayDate = new Date();
+   amount =21.53;
+   obj = signal({inputTitle:"Title",date:new Date(),amount:21.53})
 }
