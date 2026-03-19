@@ -1,0 +1,58 @@
+/* Main container */
+.not-found-container {
+  height: calc(100vh - 60px); /* adjust if header height differs */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+/* Content box */
+.not-found-container .content {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 40px 60px;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  color: #ffffff;
+}
+
+/* Heading */
+.not-found-container h1 {
+  font-size: 100px;
+  margin: 0;
+  font-weight: bold;
+}
+
+/* Sub heading */
+.not-found-container h2 {
+  margin: 10px 0;
+  font-size: 28px;
+}
+
+/* Description */
+.not-found-container p {
+  font-size: 16px;
+  margin: 15px 0 25px;
+  opacity: 0.9;
+}
+
+/* Button (Scoped properly ✅) */
+.not-found-container .home-btn {
+  padding: 10px 25px;
+  font-size: 16px;
+  border: none;
+  border-radius: 25px;
+  background: #ffffff;
+  color: #764ba2;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Button hover */
+.not-found-container .home-btn:hover {
+  background: #f1f1f1;
+  transform: scale(1.05);
+}
