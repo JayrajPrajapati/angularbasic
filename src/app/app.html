@@ -287,7 +287,8 @@
     <h3>Selected Language : {{selectedLanguageName()}}</h3>
     <br>
 
-    <input type="text" (input)="newLanguage.set($event.target.value)" placeholder="Enter a New Language" [value]="newLanguage()">
+    <input type="text" (input)="newLanguage.set($event.target.value)" placeholder="Enter a New Language"
+      [value]="newLanguage()">
     <button (click)="addNewLanguage()">Add New Language</button>
 
     @for(language of languagesList(); track language){
@@ -295,11 +296,51 @@
       (deleteLanguageByName)="deleteLanguage($event)"></app-child-to-parent-component>
     }
   </div>
-   <!-- Global State with Signals -->
+  <!-- Global State with Signals -->
   <div class="section">
     <p>Global State with Signals:</p>
     <app-display-component></app-display-component>
     <hr>
     <app-control-counter-component></app-control-counter-component>
   </div>
+  <!-- Pipe -->
+  <div class="section">
+    <h3>Uppercase with Pipe</h3>
+    <p>Title :{{topicWithProperty | uppercase}}</p>
+    <hr>
+    <p>Title :{{topicWithSignal() | uppercase}}</p>
+
+    <h3>Lowercase with Pipe</h3>
+    <p>Title :{{topicWithProperty | lowercase}}</p>
+    <hr>
+    <p>Title :{{topicWithSignal() | lowercase}}</p>
+
+    <h3>TitleCase with Pipe</h3>
+    <p>Title :{{topicWithProperty | titlecase}}</p>
+    <hr>
+    <p>Title :{{topicWithSignal() | titlecase}}</p>
+
+    <h3>With Input Field</h3>
+    <p>Title :{{inputTitle() | titlecase}}</p>
+    <input (input)="inputTitle.set($event.target.value)" type="text">
+
+    <hr>
+    <p>Current Date : {{todayDate | date}}</p>
+    <p>Current Month : {{todayDate | date:'MM'}}</p>
+    <p>Current Date : {{todayDate | date:'dd'}}</p>
+    <p>Current Short Date : {{todayDate | date:'short'}}</p>
+    <hr>
+    <p>Amount {{amount | currency:'INR'}}</p>
+    <p>Amount {{amount | currency:'USD'}}</p>
+    <hr>
+    <p>Json Object with Pipe {{obj() | json}}</p>
+  </div>
+  <!-- Custom Pipe -->
+  <div class="section">
+    <h3>Custom Pipe Original Value : {{customePipeUse()}}</h3>
+    <p>Custome Pipe Use :{{customePipeUse() | textTrim}}</p>
+    <hr>
+    <p>Custome Pipe Use With Parameter:{{customePipeUse() | textTrim:15}}</p>
+  </div>
+
 </div>
