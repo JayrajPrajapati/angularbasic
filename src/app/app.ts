@@ -10,11 +10,12 @@ import { ControlCounterComponent } from './componenets/control-counter-component
 import { CommonModule } from '@angular/common';
 import { TextTrimPipe } from './customePipe/text-trim-pipe';
 import { RouterLink, RouterOutlet } from '@angular/router';
+import { Header } from './componenets/header-component/header/header';
 
 @Component({
   selector: 'app-root',
   imports: [SignUp, FormsModule, ChildComponent, ParentToChild, ChildToParentComponent,DisplayComponent,
-    ControlCounterComponent,CommonModule,TextTrimPipe,RouterOutlet,RouterLink],
+    ControlCounterComponent,CommonModule,TextTrimPipe,RouterOutlet,RouterLink,Header],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
