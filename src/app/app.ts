@@ -9,11 +9,12 @@ import { DisplayComponent } from './componenets/displayComponent/display-compone
 import { ControlCounterComponent } from './componenets/control-counter-component/control-counter-component';
 import { CommonModule } from '@angular/common';
 import { TextTrimPipe } from './customePipe/text-trim-pipe';
+import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   imports: [SignUp, FormsModule, ChildComponent, ParentToChild, ChildToParentComponent,DisplayComponent,
-    ControlCounterComponent,CommonModule,TextTrimPipe],
+    ControlCounterComponent,CommonModule,TextTrimPipe,RouterOutlet,RouterLink],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
