@@ -8,10 +8,12 @@ import { ChildToParentComponent } from './componenets/child-to-parent-component/
 import { DisplayComponent } from './componenets/displayComponent/display-component/display-component';
 import { ControlCounterComponent } from './componenets/control-counter-component/control-counter-component';
 import { CommonModule } from '@angular/common';
+import { TextTrimPipe } from './customePipe/text-trim-pipe';
 
 @Component({
   selector: 'app-root',
-  imports: [SignUp, FormsModule, ChildComponent, ParentToChild, ChildToParentComponent,DisplayComponent,ControlCounterComponent,CommonModule],
+  imports: [SignUp, FormsModule, ChildComponent, ParentToChild, ChildToParentComponent,DisplayComponent,
+    ControlCounterComponent,CommonModule,TextTrimPipe],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -325,4 +327,7 @@ export class App {
    todayDate = new Date();
    amount =21.53;
    obj = signal({inputTitle:"Title",date:new Date(),amount:21.53})
+
+   //Custom Pipe
+   customePipeUse = signal('Dell 15.6 inch Display I3 Process with 4th Generation');
 }

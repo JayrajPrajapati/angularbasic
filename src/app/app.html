@@ -335,4 +335,12 @@
     <hr>
     <p>Json Object with Pipe {{obj() | json}}</p>
   </div>
+  <!-- Custom Pipe -->
+  <div class="section">
+    <h3>Custom Pipe Original Value : {{customePipeUse()}}</h3>
+    <p>Custome Pipe Use :{{customePipeUse() | textTrim}}</p>
+    <hr>
+    <p>Custome Pipe Use With Parameter:{{customePipeUse() | textTrim:15}}</p>
+  </div>
+
 </div>
