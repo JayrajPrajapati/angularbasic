@@ -7,6 +7,8 @@ import { Pagenotfound } from './componenets/pages/pageNotFound/pagenotfound/page
 import { ContactUs } from './componenets/pages/contact-us-route-param/contact-us/contact-us';
 import { Users } from './componenets/pages/users/users/users';
 import { UsersDetails } from './componenets/pages/users-details/users-details/users-details';
+import { EmailRegister } from './componenets/pages/register/email-register/email-register';
+import { GmailRegister } from './componenets/pages/register/gmail-register/gmail-register';
 
 export const routes: Routes = [
     { path: "", component: Home },
@@ -17,7 +19,15 @@ export const routes: Routes = [
     { path: "contactUs", component: ContactUs }, // For Optional a Route Parameter
     { path: "user", component: Users },
     { path: "user-details/:id", component: UsersDetails },
-    
+    {
+        path: "login", component: Login, children: [
+            { path: "", redirectTo: 'email', pathMatch: 'full' },
+            { path: "email", component: EmailRegister },
+            { path: "gmail", component: GmailRegister },
+        ]
+    },
+
+
     { path: "**", component: Pagenotfound }, //If you have page and want to show then use this.
     //{ path: "**", redirectTo: '' }, //If you want to redirect to other page
 ];
