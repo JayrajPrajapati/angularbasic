@@ -332,4 +332,7 @@ export class App {
 
    //Custom Pipe
    customePipeUse = signal('Dell 15.6 inch Display I3 Process with 4th Generation');
+
+   //Route Parameter with Signal
+   routeParam = signal({FromPage:"Route Parameter with Signal",date:new Date()});
 }

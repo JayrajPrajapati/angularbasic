@@ -359,4 +359,13 @@
    <app-header></app-header>
    <!-- <router-outlet ></router-outlet>  -->
   </div>
+   <!-- Route Parameter -->
+  <div  class="section routing-section">
+    <h3>Route Parameter</h3>
+   <a routerLink="/contactUs/ok/123">Contact Us with Route Paramter</a>
+   <br>
+   <a [routerLink]="['/contactUs','different Way','ok']">Contact Us with Route Paramter with Other way</a>
+   <br>
+   <a [routerLink]="['/contactUs',routeParam().FromPage,'Dynamic Second Route Object']">Dynamic Route Paramter Via Signal</a>
+  </div>
 </div>
