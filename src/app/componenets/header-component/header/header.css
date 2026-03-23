@@ -1,0 +1,38 @@
+/* Header container */
+:host {
+  display: block;
+  background-color: #1e293b;
+  padding: 12px 20px;
+  color: white;
+}
+
+/* Remove default ul style */
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  justify-content: flex-end; /* 👉 Right side */
+  align-items: center;
+  gap: 15px;
+}
+
+/* Links */
+ul li a {
+  text-decoration: none;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 6px;
+  transition: 0.3s ease;
+}
+
+/* Hover */
+ul li a:hover {
+  background-color: #334155;
+}
+
+/* Active Route */
+ul li a.active {
+  background-color: #3b82f6;
+}

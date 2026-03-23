@@ -187,3 +187,25 @@ h2{
 .todo-wrapper li span:first-child{font-weight:bold;margin-right:8px}
 .todo-wrapper li button{background:#dc3545}
 .todo-wrapper li button:hover{background:#a71d2a}
+
+/* Routing CSS */
+.routing-section ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.routing-section li a {
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  background-color: #c814ec;
+  color: white;
+  transition: 0.3s;
+}
+
+.routing-section li a:hover {
+  background-color: #b810da;
+}

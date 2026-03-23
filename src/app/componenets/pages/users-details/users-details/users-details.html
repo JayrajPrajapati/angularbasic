@@ -1,0 +1,23 @@
+<div class="user-container">
+  <h2>User Details</h2>
+
+  @if (userDetails()?.length > 0) {
+    @for (user of userDetails(); track user.id) {
+      <div class="user-card">
+        <div class="user-header">
+          <span class="user-id">#{{ user.id }}</span>
+          <span class="user-name">{{ user.name }}</span>
+        </div>
+
+        <div class="user-body">
+          <p><strong>City:</strong> {{ user.city }}</p>
+          <p><strong>Email:</strong> {{ user.email }}</p>
+        </div>
+      </div>
+    }
+  } @else {
+    <div class="no-data">
+      🚫 No User Data Found
+    </div>
+  }
+</div>

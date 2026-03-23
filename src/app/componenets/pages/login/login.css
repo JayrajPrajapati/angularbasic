@@ -1,0 +1,71 @@
+.login-container {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 25px;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+  color: #333; /* ensures all text inside is visible */
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: 600;
+}
+
+/* Navigation Tabs */
+.nav-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.nav-tabs a {
+  text-decoration: none;
+  padding: 8px 18px;
+  border-radius: 20px;
+  background: #f1f1f1;
+  color: #555;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+/* Hover Effect */
+.nav-tabs a:hover {
+  background: #007bff;
+  color: #fff;
+}
+
+/* Active Route */
+.nav-tabs a.active {
+  background: #007bff;
+  color: #fff;
+  font-weight: 500;
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+}
+
+/* Child Route Content Box */
+.child-content {
+  padding: 20px;
+  border-radius: 12px;
+  background: #f9f9f9;
+  border: 1px solid #eee;
+  min-height: 120px;
+   color: #333;           /* 🔥 important: force text color */
+}
+
+/* Optional: Child Heading Style */
+.child-content h2 {
+  text-align: center;
+  color: #444;
+  margin-bottom: 10px;
+}
+h3 {
+  color: #333;   /* force visible dark color */
+  text-align: center;
+  margin-bottom: 15px;
+}

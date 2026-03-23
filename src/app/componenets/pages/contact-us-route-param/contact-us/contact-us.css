@@ -1,0 +1,57 @@
+/* Base text */
+.label {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  margin: 12px 0;
+  color: #107ce7;
+}
+
+/* Value styling (when data exists) */
+.value {
+  margin-left: 8px;
+  color: #1e88e5;
+  font-weight: 600;
+  background: #e3f2fd;
+  padding: 4px 10px;
+  border-radius: 20px;
+  border: 1px solid #bbdefb;
+}
+
+/* Special "No Data Found" styling */
+.no-data {
+  margin-left: 8px;
+  color: #d32f2f;
+  font-weight: 600;
+  font-style: italic;
+  background: #ffebee;
+  padding: 4px 10px;
+  border-radius: 20px;
+  border: 1px dashed #ef9a9a;
+  position: relative;
+}
+
+/* Optional icon effect */
+.no-data::before {
+  content: "⚠ ";
+  font-size: 14px;
+}
+
+/* Hover effect (nice UX) */
+.no-data:hover {
+  background: #ffcdd2;
+  cursor: not-allowed;
+}
+.no-data {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

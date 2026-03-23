@@ -1,0 +1,17 @@
+<p>Welcome to contact-us with Route Parameter</p>
+
+<p class="label">
+  Route Params :
+  <span 
+    [ngClass]="getRouteParams()?.length ? 'value' : 'no-data'">
+    {{ getRouteParams()?.length ? getRouteParams() : 'No Route Param Found' }}
+  </span>
+</p>
+
+<p class="label">
+  Second Param :
+  <span 
+    [ngClass]="secondParams()?.length ? 'value' : 'no-data'">
+    {{ secondParams()?.length ? secondParams() : 'No Second Param Found' }}
+  </span>
+</p>

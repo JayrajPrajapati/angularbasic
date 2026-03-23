@@ -1,0 +1,13 @@
+<div class="login-container">
+    <h2 class="title">LogIn Page</h2>
+    <hr>
+    <h3>Child Routing</h3>
+    <nav class="nav-tabs">
+        <a routerLink="email" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Email</a>
+        <a routerLink="gmail" routerLinkActive="active">Gmail</a>
+    </nav>
+
+    <div class="child-content">
+        <router-outlet></router-outlet>
+    </div>
+</div>
