@@ -342,30 +342,38 @@
     <hr>
     <p>Custome Pipe Use With Parameter:{{customePipeUse() | textTrim:15}}</p>
   </div>
- <!-- Routing -->
-  <div  class="section routing-section">
+  <!-- Routing -->
+  <div class="section routing-section">
     <h3>Routing</h3>
-   <router-outlet></router-outlet>
-   <ul>
-    <li><a routerLink="/">Home</a></li>
-    <li><a routerLink="/about">AboutUs</a></li>
-    <li><a routerLink="/login">LogIn</a></li>
-    <li><a routerLink="/profile">Profile</a></li>
-   </ul>
+    <router-outlet></router-outlet>
+    <ul>
+      <li><a routerLink="/">Home</a></li>
+      <li><a routerLink="/about">AboutUs</a></li>
+      <li><a routerLink="/login">LogIn</a></li>
+      <li><a routerLink="/profile">Profile</a></li>
+    </ul>
   </div>
-   <!-- Header Component Routing -->
-  <div  class="section routing-section">
+  <!-- Header Component Routing -->
+  <div class="section routing-section">
     <h3>Header Component Routing</h3>
-   <app-header></app-header>
-   <!-- <router-outlet ></router-outlet>  -->
+    <app-header></app-header>
+    <!-- <router-outlet ></router-outlet>  -->
   </div>
-   <!-- Route Parameter -->
-  <div  class="section routing-section">
+  <!-- Route Parameter -->
+  <div class="section routing-section">
     <h3>Route Parameter</h3>
-   <a routerLink="/contactUs/ok/123">Contact Us with Route Paramter</a>
-   <br>
-   <a [routerLink]="['/contactUs','different Way','ok']">Contact Us with Route Paramter with Other way</a>
-   <br>
-   <a [routerLink]="['/contactUs',routeParam().FromPage,'Dynamic Second Route Object']">Dynamic Route Paramter Via Signal</a>
+    <a routerLink="/contactUs/ok/123">Contact Us with Route Paramter</a>
+    <br>
+    <a [routerLink]="['/contactUs','different Way','ok']">Contact Us with Route Paramter with Other way</a>
+    <br>
+    <a [routerLink]="['/contactUs',routeParam().FromPage,'Dynamic Second Route Object']">Dynamic Route Paramter Via
+      Signal</a>
+  </div>
+    <!-- Reactive Form -->
+  <div class="section">
+    <h3>Reative Form</h3>
+    <input type="text" name="email" [formControl]="email">
+    <input type="password" name="password" [formControl]="password">
+    <button (click)="login()">LogIn</button>
   </div>
 </div>

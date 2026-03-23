@@ -1,6 +1,6 @@
 import { Component, computed, effect, signal, WritableSignal } from '@angular/core';
 import { SignUp } from './componenets/sign-up-component/sign-up';
-import { FormsModule } from '@angular/forms';
+import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { single } from 'rxjs';
 import { ChildComponent } from './componenets/child-component/child-component';
 import { ParentToChild } from './componenets/parent-to-child-component/parent-to-child';
@@ -14,8 +14,8 @@ import { Header } from './componenets/header-component/header/header';
 
 @Component({
   selector: 'app-root',
-  imports: [SignUp, FormsModule, ChildComponent, ParentToChild, ChildToParentComponent,DisplayComponent,
-    ControlCounterComponent,CommonModule,TextTrimPipe,RouterOutlet,RouterLink,Header],
+  imports: [SignUp, FormsModule, ChildComponent, ParentToChild, ChildToParentComponent, DisplayComponent,
+    ControlCounterComponent, CommonModule, TextTrimPipe, RouterOutlet, RouterLink, Header,ReactiveFormsModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -321,18 +321,27 @@ export class App {
     this.languagesList.update((data) => data.filter((item) => item != language))
     this.selectedLanguageName.set('')
   }
-   //Pipe 
-   topicWithProperty = "Pipe with Property";
-   topicWithSignal = signal("Pipe with Signal");
+  //Pipe 
+  topicWithProperty = "Pipe with Property";
+  topicWithSignal = signal("Pipe with Signal");
 
-   inputTitle = signal('');
-   todayDate = new Date();
-   amount =21.53;
-   obj = signal({inputTitle:"Title",date:new Date(),amount:21.53})
+  inputTitle = signal('');
+  todayDate = new Date();
+  amount = 21.53;
+  obj = signal({ inputTitle: "Title", date: new Date(), amount: 21.53 })
 
-   //Custom Pipe
-   customePipeUse = signal('Dell 15.6 inch Display I3 Process with 4th Generation');
+  //Custom Pipe
+  customePipeUse = signal('Dell 15.6 inch Display I3 Process with 4th Generation');
 
-   //Route Parameter with Signal
-   routeParam = signal({FromPage:"Route Parameter with Signal",date:new Date()});
+  //Route Parameter with Signal
+  routeParam = signal({ FromPage: "Route Parameter with Signal", date: new Date() });
+
+  //Reactive Form
+  email = new FormControl("default@email.com");
+  password = new FormControl("");
+
+  login() {
+    console.log(this.email.value, this.password.value);
+
+  }
 }
