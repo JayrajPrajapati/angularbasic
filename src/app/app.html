@@ -382,11 +382,28 @@
     <h3>Reactive Form with FormTag</h3>
     <form [formGroup]="loginForm" (ngSubmit)="formLogIn()" method="post">    
       <input type="text" name="username" formControlName="username" placeholder="Enter a Name">
-      <input type="email" name="email" formControlName="email" placeholder="Enter a Email">
-      <input type="password" name="password" formControlName="password" placeholder="Enter a Password">
-      
+      @if(username?.hasError('required') && username?.touched){
+     <span class="error">Username is required.</span>
+      }
+       @if(username?.errors?.['maxlength'] && username?.touched){
+        <span class="error">Username cannot exceed 15 characters.</span>
+      }
+      <input type="email" name="emailId" formControlName="emailId" placeholder="Enter a Email">
+      @if(emailId?.hasError('required') && emailId?.touched){
+        <span class="error">Email is required.</span>
+      }
+       @if(emailId?.errors?.['email'] && emailId?.touched){
+        <span class="error">Email Id is not valid.</span>
+      }
+      <input type="password" name="psw" formControlName="psw" placeholder="Enter a Password">
+       @if(psw?.hasError('required') && psw?.touched){
+      <span class="error">Password is required.</span>
+      }
+       @if(psw?.errors?.['minlength'] && psw?.touched){
+        <span class="error">Password must be at least 6 characters long.</span>
+      }
        <div class="btn-group">
-        <button type="submit">LogIn</button>
+        <button type="submit" [disabled]="loginForm.invalid">LogIn</button>
         <button type="button" (click)="resetLogIn()">Reset</button>
       </div>
     </form>

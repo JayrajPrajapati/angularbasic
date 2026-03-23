@@ -1,6 +1,6 @@
 import { Component, computed, effect, signal, WritableSignal } from '@angular/core';
 import { SignUp } from './componenets/sign-up-component/sign-up';
-import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { single } from 'rxjs';
 import { ChildComponent } from './componenets/child-component/child-component';
 import { ParentToChild } from './componenets/parent-to-child-component/parent-to-child';
@@ -347,11 +347,19 @@ export class App {
 
   //Reactive Form with Form Tag
   loginForm = new FormGroup({
-    username: new FormControl(''),
-    email: new FormControl("default@email.com"),
-    password: new FormControl(""),
+    username: new FormControl('', [Validators.required,Validators.maxLength(15)]),
+    emailId: new FormControl("default@email.com", [Validators.required,Validators.email]),
+    psw: new FormControl("",[Validators.required,Validators.minLength(6)]),
   })
-
+  get username() {
+    return this.loginForm.get("username");
+  }
+  get emailId() {
+    return this.loginForm.get("emailId");
+  }
+  get psw() {
+    return this.loginForm.get("psw");
+  }
   formLogIn() {
     console.log(this.loginForm.value);
   }
@@ -359,8 +367,8 @@ export class App {
     this.loginForm.setValue(
       {
         username: '',
-        email: '',
-        password: '',
+        emailId: '',
+        psw: '',
       }
     )
   }

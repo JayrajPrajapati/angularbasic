@@ -270,3 +270,104 @@ h2{
 .login-form-section .btn-group button {
   flex: 1;
 }
+/* LogIN Form with Validation CSS */
+/* Wrapper */
+.login-form-section {
+  margin: 20px auto;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Card */
+.login-form-section .section {
+  padding: 20px;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Title */
+.login-form-section h3 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* Form Layout */
+.login-form-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Inputs */
+.login-form-section input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+/* Focus */
+.login-form-section input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Error Text */
+.login-form-section .error {
+  color: #d93025;
+  font-size: 12px;
+  margin-top: -5px;
+  margin-bottom: 5px;
+}
+
+/* Button Row */
+.login-form-section .btn-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* Buttons */
+.login-form-section .btn-group button {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+/* Submit Button */
+.login-form-section .btn-group button[type="submit"] {
+  background: #007bff;
+  color: #fff;
+}
+
+/* Reset Button */
+.login-form-section .btn-group button[type="button"] {
+  background: #f1f1f1;
+  color: #333;
+}
+
+/* 🔥 FIX: Disabled Button Style */
+.login-form-section button:disabled {
+  background: #ccc !important;
+  color: #666 !important;
+  cursor: not-allowed;
+  opacity: 0.7;
+  box-shadow: none;
+}
+
+/* Hover only when NOT disabled */
+.login-form-section button:not(:disabled):hover {
+  transform: translateY(-1px);
+  opacity: 0.9;
+}
+.login-form-section input.ng-invalid.ng-touched {
+  border-color: #d93025;
+}
+
+.login-form-section input.ng-valid.ng-touched {
+  border-color: #28a745;
+}
