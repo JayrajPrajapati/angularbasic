@@ -1,6 +1,6 @@
 import { Component, computed, effect, signal, WritableSignal } from '@angular/core';
 import { SignUp } from './componenets/sign-up-component/sign-up';
-import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormControl, FormGroup, FormsModule, NgForm, ReactiveFormsModule, Validators } from '@angular/forms';
 import { single } from 'rxjs';
 import { ChildComponent } from './componenets/child-component/child-component';
 import { ParentToChild } from './componenets/parent-to-child-component/parent-to-child';
@@ -347,9 +347,9 @@ export class App {
 
   //Reactive Form with Form Tag
   loginForm = new FormGroup({
-    username: new FormControl('', [Validators.required,Validators.maxLength(15)]),
-    emailId: new FormControl("default@email.com", [Validators.required,Validators.email]),
-    psw: new FormControl("",[Validators.required,Validators.minLength(6)]),
+    username: new FormControl('', [Validators.required, Validators.maxLength(15)]),
+    emailId: new FormControl("default@email.com", [Validators.required, Validators.email]),
+    psw: new FormControl("", [Validators.required, Validators.minLength(6)]),
   })
   get username() {
     return this.loginForm.get("username");
@@ -371,5 +371,13 @@ export class App {
         psw: '',
       }
     )
+  }
+  //Template Driver Form
+  userDetail: any = undefined;
+  submitRegister(data: NgForm) {
+    this.userDetail = data;
+  }
+  resetRegister() {
+    this.userDetail = undefined;
   }
 }

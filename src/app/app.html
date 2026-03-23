@@ -369,44 +369,72 @@
     <a [routerLink]="['/contactUs',routeParam().FromPage,'Dynamic Second Route Object']">Dynamic Route Paramter Via
       Signal</a>
   </div>
-    <!-- Reactive Form -->
+  <!-- Reactive Form -->
   <div class="section">
     <h3>Reative Form</h3>
     <input type="text" name="email" [formControl]="email">
     <input type="password" name="password" [formControl]="password">
     <button (click)="login()">LogIn</button>
   </div>
-    <!-- Reactive Form -->
+  <!-- Reactive Form -->
   <div class="login-form-section">
-  <div class="section">
-    <h3>Reactive Form with FormTag</h3>
-    <form [formGroup]="loginForm" (ngSubmit)="formLogIn()" method="post">    
-      <input type="text" name="username" formControlName="username" placeholder="Enter a Name">
-      @if(username?.hasError('required') && username?.touched){
-     <span class="error">Username is required.</span>
-      }
-       @if(username?.errors?.['maxlength'] && username?.touched){
+    <div class="section">
+      <h3>Reactive Form with FormTag</h3>
+      <form [formGroup]="loginForm" (ngSubmit)="formLogIn()" method="post">
+        <input type="text" name="username" formControlName="username" placeholder="Enter a Name">
+        @if(username?.hasError('required') && username?.touched){
+        <span class="error">Username is required.</span>
+        }
+        @if(username?.errors?.['maxlength'] && username?.touched){
         <span class="error">Username cannot exceed 15 characters.</span>
-      }
-      <input type="email" name="emailId" formControlName="emailId" placeholder="Enter a Email">
-      @if(emailId?.hasError('required') && emailId?.touched){
+        }
+        <input type="email" name="emailId" formControlName="emailId" placeholder="Enter a Email">
+        @if(emailId?.hasError('required') && emailId?.touched){
         <span class="error">Email is required.</span>
-      }
-       @if(emailId?.errors?.['email'] && emailId?.touched){
+        }
+        @if(emailId?.errors?.['email'] && emailId?.touched){
         <span class="error">Email Id is not valid.</span>
-      }
-      <input type="password" name="psw" formControlName="psw" placeholder="Enter a Password">
-       @if(psw?.hasError('required') && psw?.touched){
-      <span class="error">Password is required.</span>
-      }
-       @if(psw?.errors?.['minlength'] && psw?.touched){
+        }
+        <input type="password" name="psw" formControlName="psw" placeholder="Enter a Password">
+        @if(psw?.hasError('required') && psw?.touched){
+        <span class="error">Password is required.</span>
+        }
+        @if(psw?.errors?.['minlength'] && psw?.touched){
         <span class="error">Password must be at least 6 characters long.</span>
-      }
-       <div class="btn-group">
-        <button type="submit" [disabled]="loginForm.invalid">LogIn</button>
-        <button type="button" (click)="resetLogIn()">Reset</button>
-      </div>
-    </form>
+        }
+        <div class="btn-group">
+          <button type="submit" [disabled]="loginForm.invalid">LogIn</button>
+          <button type="button" (click)="resetLogIn()">Reset</button>
+        </div>
+      </form>
+    </div>
   </div>
-</div>
+  <!-- Template Driver Form -->
+  <div class="template-form-section">
+    <div class="section">
+      <h3> Template Driver Form</h3>
+      <ul>
+        <li>Name : {{ userDetail?.username || 'No Data Found' }}</li>
+        <li>Gender : {{ userDetail?.gender || 'No Data Found' }}</li>
+        <li>Range : {{ userDetail?.range || 'No Data Found' }}</li>
+        <li>Bio : {{ userDetail?.bio || 'No Data Found' }}</li>
+      </ul>
+      <hr>
+      <form #userForm="ngForm" (ngSubmit)="submitRegister(userForm.value)">
+        <input type="text" name="username" placeholder="Enter a Name" ngModel>
+        <input type="text" name="password" placeholder="Enter a Password" ngModel>
+        <select name="gender" ngModel>
+          <option value="">Select Gender</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
+        <input type="range" name="range" ngModel>
+        <textarea name="bio" ngModel></textarea>
+        <div class="btn-row">
+          <button type="submit">LogIn</button>
+          <button type="button" (click)="resetRegister()">Reset</button>
+        </div>
+      </form>
+    </div>
+  </div>
 </div>
