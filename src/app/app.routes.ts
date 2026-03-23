@@ -18,7 +18,12 @@ export const routes: Routes = [
     { path: "contactUs/:data/:secondObj", component: ContactUs },
     { path: "contactUs", component: ContactUs }, // For Optional a Route Parameter
     { path: "user", component: Users },
-    { path: "user-details/:id", component: UsersDetails },
+    //{ path: "user-details/:id", component: UsersDetails },
+    {
+        path: "user-details/:id",
+        loadComponent: () => import('./componenets/pages/users-details/users-details/users-details')
+            .then((c) => c.UsersDetails)
+    }, //Lazy Loading
     {
         path: "login", component: Login, children: [
             { path: "", redirectTo: 'email', pathMatch: 'full' },
