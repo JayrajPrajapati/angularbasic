@@ -376,4 +376,20 @@
     <input type="password" name="password" [formControl]="password">
     <button (click)="login()">LogIn</button>
   </div>
+    <!-- Reactive Form -->
+  <div class="login-form-section">
+  <div class="section">
+    <h3>Reactive Form with FormTag</h3>
+    <form [formGroup]="loginForm" (ngSubmit)="formLogIn()" method="post">    
+      <input type="text" name="username" formControlName="username" placeholder="Enter a Name">
+      <input type="email" name="email" formControlName="email" placeholder="Enter a Email">
+      <input type="password" name="password" formControlName="password" placeholder="Enter a Password">
+      
+       <div class="btn-group">
+        <button type="submit">LogIn</button>
+        <button type="button" (click)="resetLogIn()">Reset</button>
+      </div>
+    </form>
+  </div>
+</div>
 </div>

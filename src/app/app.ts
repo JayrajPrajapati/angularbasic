@@ -1,6 +1,6 @@
 import { Component, computed, effect, signal, WritableSignal } from '@angular/core';
 import { SignUp } from './componenets/sign-up-component/sign-up';
-import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { single } from 'rxjs';
 import { ChildComponent } from './componenets/child-component/child-component';
 import { ParentToChild } from './componenets/parent-to-child-component/parent-to-child';
@@ -15,7 +15,7 @@ import { Header } from './componenets/header-component/header/header';
 @Component({
   selector: 'app-root',
   imports: [SignUp, FormsModule, ChildComponent, ParentToChild, ChildToParentComponent, DisplayComponent,
-    ControlCounterComponent, CommonModule, TextTrimPipe, RouterOutlet, RouterLink, Header,ReactiveFormsModule],
+    ControlCounterComponent, CommonModule, TextTrimPipe, RouterOutlet, RouterLink, Header, ReactiveFormsModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -343,5 +343,25 @@ export class App {
   login() {
     console.log(this.email.value, this.password.value);
 
+  }
+
+  //Reactive Form with Form Tag
+  loginForm = new FormGroup({
+    username: new FormControl(''),
+    email: new FormControl("default@email.com"),
+    password: new FormControl(""),
+  })
+
+  formLogIn() {
+    console.log(this.loginForm.value);
+  }
+  resetLogIn() {
+    this.loginForm.setValue(
+      {
+        username: '',
+        email: '',
+        password: '',
+      }
+    )
   }
 }

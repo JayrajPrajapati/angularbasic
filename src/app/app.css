@@ -209,3 +209,64 @@ h2{
 .routing-section li a:hover {
   background-color: #b810da;
 }
+/* LogIn Form  */
+.login-form-section {
+  margin: 20px auto;
+}
+
+/* Only affects THIS form */
+.login-form-section .section {
+  padding: 20px;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.login-form-section h3 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.login-form-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.login-form-section input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.login-form-section input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.login-form-section button {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.login-form-section button[type="submit"] {
+  background: #007bff;
+  color: white;
+}
+
+.login-form-section button[type="button"] {
+  background: #eee;
+}
+.login-form-section .btn-group {
+  display: flex;
+  gap: 10px;
+}
+
+/* Make both buttons equal width */
+.login-form-section .btn-group button {
+  flex: 1;
+}
