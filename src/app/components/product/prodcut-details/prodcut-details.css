@@ -1,0 +1,204 @@
+/* Container */
+.details-container {
+  padding: 30px;
+  background: #f6f8fb;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Card Layout */
+.details-card {
+  display: flex;
+  gap: 40px;
+  background: #fff;
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  flex-wrap: wrap;
+}
+
+/* Left Image */
+.details-left {
+  flex: 1;
+  text-align: center;
+}
+
+.details-img {
+  width: 100%;
+  max-width: 320px;
+  height: 300px;
+  object-fit: contain;
+  border-radius: 12px;
+  background: #f1f1f1;
+  padding: 10px;
+}
+
+/* Right Section */
+.details-right {
+  flex: 2;
+  min-width: 300px;
+}
+
+/* Title */
+.details-title {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+/* Brand */
+.details-brand {
+  color: #777;
+  margin-bottom: 15px;
+}
+
+/* Price */
+.details-price-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.details-price {
+  font-size: 24px;
+  font-weight: bold;
+  color: #222;
+}
+
+.details-discount {
+  color: #2ecc71;
+  font-weight: 500;
+}
+
+/* Meta */
+.details-meta {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.details-rating {
+  color: #f39c12;
+  font-weight: 500;
+}
+
+.details-stock {
+  font-weight: 500;
+}
+
+.instock {
+  color: #27ae60;
+}
+
+.outstock {
+  color: #e74c3c;
+}
+
+/* Description */
+.details-desc {
+  margin: 15px 0;
+  line-height: 1.6;
+  color: #444;
+}
+
+/* Info Grid */
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.details-grid div {
+  background: #f9fafc;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+.details-grid span {
+  display: block;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 3px;
+}
+
+/* Dimensions */
+.details-dimensions {
+  margin-top: 20px;
+}
+
+.details-dimensions h4 {
+  margin-bottom: 8px;
+}
+
+.dim-box {
+  display: flex;
+  gap: 15px;
+}
+
+.dim-box span {
+  background: #eef2f7;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+/* Button */
+.details-btn {
+  margin-top: 20px;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.details-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0,123,255,0.3);
+}
+/* Back Button */
+.details-back-btn {
+  margin: 10px 0 20px 10px;
+  padding: 10px 18px;
+  background: #d1d9e4;
+  color: #333;
+  border: 1px solid #dcdfe6;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.25s ease;
+}
+
+/* Hover */
+.details-back-btn:hover {
+  background: #e9f2ff;
+  color: #1976d2;
+  border-color: #1976d2;
+  transform: translateX(-2px);
+}
+
+/* Active (click feel) */
+.details-back-btn:active {
+  transform: scale(0.97);
+}
+
+/* Focus (accessibility) */
+.details-back-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.2);
+}
+
+/* Arrow icon */
+.details-back-btn::before {
+  content: "←";
+  font-size: 16px;
+}

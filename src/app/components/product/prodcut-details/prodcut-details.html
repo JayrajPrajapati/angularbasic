@@ -1,0 +1,69 @@
+<div class="details-container">
+
+    <div class="details-card">
+
+        <!-- LEFT: IMAGE -->
+        <div class="details-left">
+            <img [src]="product()?.thumbnail" class="details-img" />
+        </div>
+
+        <!-- RIGHT: INFO -->
+        <div class="details-right">
+
+            <h1 class="details-title">{{ product()?.title }}</h1>
+
+            <p class="details-brand">by {{ product()?.brand }}</p>
+
+            <div class="details-price-box">
+                <span class="details-price">
+                    {{ product()?.price | currency:'INR' }}
+                </span>
+                <span class="details-discount">
+                    {{ product()?.discountPercentage }}% OFF
+                </span>
+            </div>
+
+            <div class="details-meta">
+                <span class="details-rating">⭐ {{ product()?.rating }}</span>
+                <span class="details-stock" [ngClass]="{
+                'instock': product()?.stock > 0,
+                'outstock': product()?.stock === 0
+              }">
+                    {{ product()?.availabilityStatus }}
+                </span>
+            </div>
+
+            <p class="details-desc">
+                {{ product()?.description }}
+            </p>
+
+            <!-- INFO GRID -->
+            <div class="details-grid">
+                <div><span>Category</span>{{ product()?.category }}</div>
+                <div><span>SKU</span>{{ product()?.sku }}</div>
+                <div><span>Weight</span>{{ product()?.weight }} g</div>
+                <div><span>Warranty</span>{{ product()?.warrantyInformation }}</div>
+                <div><span>Shipping</span>{{ product()?.shippingInformation }}</div>
+                <div><span>Return</span>{{ product()?.returnPolicy }}</div>
+            </div>
+
+            <!-- DIMENSIONS -->
+            <div class="details-dimensions">
+                <h4>Dimensions</h4>
+                <div class="dim-box">
+                    <span>W: {{ product()?.dimensions?.width }}</span>
+                    <span>H: {{ product()?.dimensions?.height }}</span>
+                    <span>D: {{ product()?.dimensions?.depth }}</span>
+                </div>
+            </div>
+
+            <!-- BUTTON -->
+            <button class="details-btn">Add to Cart</button>
+            <button class="details-back-btn" (click)="goBack()">
+                Back to Products
+            </button>
+
+        </div>
+    </div>
+
+</div>

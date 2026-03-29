@@ -1,0 +1,24 @@
+<div class="product-container">
+  <h3 class="product-heading">Product List API</h3>
+
+  <div class="product-grid">
+    @for(product of productList(); track product.id){
+    <div class="product-card">
+
+      <img [src]="product.thumbnail" alt="product" class="product-img" />
+
+      <div class="product-info">
+        <h4 class="product-title">{{ product.title }}</h4>
+        <p class="product-brand">Brand: {{ product.brand }}</p>
+        <p class="product-price">
+          {{ product.price | currency:'INR'}}
+          <span class="product-discount">
+            ({{ product.discountPercentage }}% OFF)
+          </span>
+        </p>
+        <a [routerLink]="'details/'+product.id">More Details</a>
+      </div>
+    </div>
+    }
+  </div>
+</div>
