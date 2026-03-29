@@ -209,3 +209,306 @@ h2{
 .routing-section li a:hover {
   background-color: #b810da;
 }
+/* LogIn Form  */
+.login-form-section {
+  margin: 20px auto;
+}
+
+/* Only affects THIS form */
+.login-form-section .section {
+  padding: 20px;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.login-form-section h3 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.login-form-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.login-form-section input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.login-form-section input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.login-form-section button {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.login-form-section button[type="submit"] {
+  background: #007bff;
+  color: white;
+}
+
+.login-form-section button[type="button"] {
+  background: #eee;
+}
+.login-form-section .btn-group {
+  display: flex;
+  gap: 10px;
+}
+
+/* Make both buttons equal width */
+.login-form-section .btn-group button {
+  flex: 1;
+}
+/* LogIN Form with Validation CSS */
+/* Wrapper */
+.login-form-section {
+  margin: 20px auto;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Card */
+.login-form-section .section {
+  padding: 20px;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Title */
+.login-form-section h3 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* Form Layout */
+.login-form-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Inputs */
+.login-form-section input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+/* Focus */
+.login-form-section input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Error Text */
+.login-form-section .error {
+  color: #d93025;
+  font-size: 12px;
+  margin-top: -5px;
+  margin-bottom: 5px;
+}
+
+/* Button Row */
+.login-form-section .btn-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* Buttons */
+.login-form-section .btn-group button {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+/* Submit Button */
+.login-form-section .btn-group button[type="submit"] {
+  background: #007bff;
+  color: #fff;
+}
+
+/* Reset Button */
+.login-form-section .btn-group button[type="button"] {
+  background: #f1f1f1;
+  color: #333;
+}
+
+/* 🔥 FIX: Disabled Button Style */
+.login-form-section button:disabled {
+  background: #ccc !important;
+  color: #666 !important;
+  cursor: not-allowed;
+  opacity: 0.7;
+  box-shadow: none;
+}
+
+/* Hover only when NOT disabled */
+.login-form-section button:not(:disabled):hover {
+  transform: translateY(-1px);
+  opacity: 0.9;
+}
+.login-form-section input.ng-invalid.ng-touched {
+  border-color: #d93025;
+}
+
+.login-form-section input.ng-valid.ng-touched {
+  border-color: #28a745;
+}
+/* Template Driven Form CSS  */
+/* Main container */
+.template-form-section {
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #eef2f7, #d9e4f5);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Card section */
+.template-form-section .section {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: 0.3s ease;
+}
+
+.template-form-section .section:hover {
+  transform: translateY(-5px);
+}
+
+/* Heading */
+.template-form-section h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #2c3e50;
+  letter-spacing: 1px;
+}
+
+/* User details list */
+.template-form-section ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.template-form-section ul li {
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+  color: #555;
+  font-size: 14px;
+}
+
+/* Special style for empty data */
+.template-form-section ul li:empty::after {
+  content: "No data found";
+  color: #e74c3c;
+  font-style: italic;
+}
+
+/* Divider */
+.template-form-section hr {
+  margin: 20px 0;
+  border: none;
+  border-top: 1px solid #ddd;
+}
+
+/* Form inputs */
+.template-form-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.template-form-section input,
+.template-form-section select,
+.template-form-section textarea {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+/* Focus effect */
+.template-form-section input:focus,
+.template-form-section select:focus,
+.template-form-section textarea:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+}
+
+/* Range input */
+.template-form-section input[type="range"] {
+  padding: 0;
+}
+
+/* Textarea */
+.template-form-section textarea {
+  resize: none;
+  height: 80px;
+}
+
+/* Buttons */
+.template-form-section button {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+/* Submit button */
+.template-form-section button[type="submit"] {
+  background: #3498db;
+  color: white;
+}
+
+.template-form-section button[type="submit"]:hover {
+  background: #2980b9;
+}
+
+/* Reset button */
+.template-form-section button[type="button"] {
+  background: #ecf0f1;
+  color: #333;
+}
+
+.template-form-section button[type="button"]:hover {
+  background: #dcdde1;
+}
+/* Button row */
+.template-form-section .btn-row {
+  grid-column: 1 / -1; /* take full width */
+  display: flex;
+  gap: 10px;
+}
+
+/* Make buttons share space equally */
+.template-form-section .btn-row button {
+  flex: 1;
+}
+
+/* Remove previous full-width button rule if applied */
+.template-form-section button {
+  width: auto;
+}
