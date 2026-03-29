@@ -11,6 +11,9 @@ import { CommonModule } from '@angular/common';
 import { TextTrimPipe } from './customePipe/text-trim-pipe';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { Header } from './componenets/header-component/header/header';
+import { ApiService } from './services/api-services/api-service';
+import { Product } from './services/api-services/api-response-interface';
+import { UsersDetails } from './componenets/pages/users-details/users-details/users-details';
 
 @Component({
   selector: 'app-root',
@@ -178,7 +181,7 @@ export class App {
   increaseSpeed() {
     this.speed.set(this.speed() + 10);
   }
-  constructor() {
+  constructor(private apiService: ApiService) {
     effect(() => {
       console.log("Simple Property", this.simplePropertyData);
       console.log("Signal Property", this.signalPropertyData());
@@ -379,5 +382,13 @@ export class App {
   }
   resetRegister() {
     this.userDetail = undefined;
+  }
+
+  //Product API Calling
+  productList: any = signal<Product[] | undefined>(undefined);
+  ngOnInit() {
+    this.apiService.getProduct().subscribe((data) => {
+      this.productList.set(data.products);
+    })
   }
 }

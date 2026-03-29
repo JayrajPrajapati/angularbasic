@@ -437,4 +437,45 @@
       </form>
     </div>
   </div>
+  <!-- Product API Calling -->
+  <div class="product-container">
+  <h3 class="product-heading">Product List</h3>
+
+  <div class="product-grid">
+    @for(product of productList(); track product.id){
+    <div class="product-card">
+
+      <img [src]="product.thumbnail" alt="product" class="product-img" />
+
+      <div class="product-info">
+        <h4 class="product-title">{{ product.title }}</h4>
+        <p class="product-brand">Brand: {{ product.brand }}</p>
+        <p class="product-price">
+          {{ product.price | currency:'INR'}}
+          <span class="product-discount">
+            ({{ product.discountPercentage }}% OFF)
+          </span>
+        </p>
+
+        <p class="product-rating">
+          ⭐ {{ product.rating }}
+        </p>
+
+        <p class="product-stock"
+           [ngClass]="{
+             'in-stock': product.stock > 0,
+             'out-stock': product.stock === 0
+           }">
+          {{ product.availabilityStatus }}
+        </p>
+
+        <p class="product-desc">
+          {{ product.description }}
+        </p>
+
+      </div>
+    </div>
+    }
+  </div>
+</div>
 </div>
