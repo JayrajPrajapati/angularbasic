@@ -1,0 +1,184 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #eef2ff, #f8fafc);
+}
+
+/* Container */
+.user-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+  padding: 25px;
+}
+
+/* Card */
+.user-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 18px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+  transition: 0.3s ease;
+}
+
+/* Gradient top border */
+.user-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  background: linear-gradient(90deg, #6366f1, #06b6d4);
+}
+
+/* Hover */
+.user-card:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* Username (highlighted) */
+.username {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+  background: linear-gradient(90deg, #4f46e5, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Badge */
+.badge {
+  background: #eef2ff;
+  color: #4f46e5;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+/* Designation */
+.designation {
+  font-weight: bold;
+  font-size: large;
+  font-size: 14px;
+  color: #374151;
+  margin: 6px 0;
+}
+
+/* Bio */
+.bio {
+  font-weight: bold;
+  font-size: 16px;
+  color: #f10b0b;
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+/* Details */
+.user-details {
+  border-top: 1px dashed #e5e7eb;
+  padding-top: 10px;
+}
+
+/* Row */
+.user-details p {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  margin: 6px 0;
+}
+
+/* Label */
+.user-details strong {
+  color: #2431d1;
+}
+
+/* Value */
+.user-details span {
+  color: #cd952e;
+  font-weight: 500;
+}
+
+/* Special highlight (package) */
+.user-details p:nth-child(4) span {
+  color: #16a34a;
+  font-weight: 600;
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .user-container {
+    grid-template-columns: 1fr;
+  }
+}
+/* 🔥 Delete Button */
+.delete-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.delete-btn:hover {
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(220,38,38,0.4);
+}
+
+/* Click effect */
+.delete-btn:active {
+  transform: scale(0.95);
+}
+/* Header right side */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ✏️ Edit Button */
+.edit-btn {
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: #3b82f6;
+  padding: 6px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.edit-btn:hover {
+  background: #dbeafe;
+  color: #1d4ed8;
+  transform: scale(1.2);
+}
+
+/* 🗑️ Delete Button */
+.delete-icon-btn {
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: #ef4444;
+  padding: 6px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.delete-icon-btn:hover {
+  background: #fee2e2;
+  color: #dc2626;
+  transform: scale(1.2);
+}

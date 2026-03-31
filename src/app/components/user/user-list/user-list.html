@@ -1,0 +1,29 @@
+<div class="user-container">
+    @for (user of userList(); track user.id) {
+    <div class="user-card">
+
+        <div class="user-header">
+            <h2>{{ user.username | titlecase }}</h2>
+            <span class="badge">{{ user.range }}</span>
+            <!-- Edit Button -->
+            <button class="edit-btn" (click)="editUser(user.id!)">✏️</button>
+
+            <!-- Delete Button -->
+            <button class="delete-icon-btn" (click)="deleteUser(user.id!)">🗑️</button>
+        </div>
+
+        <p class="designation">{{ user.designation }}</p>
+        <p class="bio">{{ user.bio }}</p>
+
+        <div class="user-details">
+            <p><strong>Role</strong> <span>{{ user.role }}</span></p>
+            <p><strong>Expertise</strong> <span>{{ user.expertise }}</span></p>
+            <p><strong>Degree</strong> <span>{{ user.degree }}</span></p>
+            <p><strong>Package</strong> <span>{{ user.package }}</span></p>
+            <p><strong>Mobile</strong> <span>{{ user.mobile }}</span></p>
+            <p><strong>Gender</strong> <span>{{ user.gender }}</span></p>
+        </div>
+    </div>
+    }
+
+</div>

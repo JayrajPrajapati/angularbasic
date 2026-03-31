@@ -1,0 +1,96 @@
+<div class="form-container">
+  <h2 class="form-title">  {{ isEditMode ? 'Update User' : 'Add User' }} </h2>
+
+  <div class="user-form">
+
+    <div class="form-group">
+      <label>Username</label>
+      <input type="text" [formControl]="username" />
+      <span class="error" *ngIf="username.touched && username.invalid">
+        <span *ngIf="username.errors?.['required']">Username is required</span>
+        <span *ngIf="username.errors?.['minlength']">Minimum 3 characters</span>
+      </span>
+    </div>
+
+    <div class="form-group">
+      <label>Gender</label>
+      <select [formControl]="gender">
+        <option value="">Select Gender</option>
+        <option>Male</option>
+        <option>Female</option>
+      </select>
+      <span class="error" *ngIf="gender.touched && gender.invalid">
+        Gender is required
+      </span>
+    </div>
+
+    <div class="form-group">
+      <label>Designation</label>
+      <input type="text" [formControl]="designation" />
+         <span class="error" *ngIf="designation.touched && designation.invalid">
+        <span *ngIf="designation.errors?.['required']">Designation is required</span>
+      </span>
+    </div>
+
+    <div class="form-group">
+      <label>Role</label>
+      <input type="text" [formControl]="role" />
+        <span class="error" *ngIf="role.touched && role.invalid">
+        <span *ngIf="role.errors?.['required']">Role is required</span>
+      </span>
+    </div>
+
+    <div class="form-group">
+      <label>Expertise</label>
+      <input type="text" [formControl]="expertise" />
+      <span class="error" *ngIf="expertise.touched && expertise.invalid">
+        <span *ngIf="expertise.errors?.['required']">Expertise is required</span>
+      </span>
+    </div>
+
+    <div class="form-group">
+      <label>Degree</label>
+      <input type="text" [formControl]="degree" />
+      <span class="error" *ngIf="degree.touched && degree.invalid">
+        <span *ngIf="degree.errors?.['required']">Degree is required</span>
+      </span>
+    </div>
+
+    <div class="form-group">
+      <label>Package</label>
+      <input type="text" [formControl]="package" />
+        <span class="error" *ngIf="package.touched && package.invalid">
+        <span *ngIf="package.errors?.['required']">Package is required</span>
+      </span>
+    </div>
+
+    <div class="form-group">
+      <label>Mobile</label>
+      <input type="text" [formControl]="mobile" />
+      <span class="error" *ngIf="mobile.touched && mobile.invalid">
+        <span *ngIf="mobile.errors?.['required']">Mobile is required</span>
+        <span *ngIf="mobile.errors?.['pattern']">Enter valid 10-digit number</span>
+      </span>
+    </div>
+
+    <div class="form-group full-width">
+      <label>Bio</label>
+      <textarea [formControl]="bio"></textarea>
+      <span class="error" *ngIf="bio.touched && bio.invalid">
+        <span *ngIf="bio.errors?.['required']">Bio is required</span>
+        <span *ngIf="bio.errors?.['minlength']">Minimum 10 characters</span>
+      </span>
+    </div>
+
+    <div class="form-actions">
+      <button class="btn secondary" type="button" (click)="route.navigate(['/user'])">
+        Back
+      </button>
+
+      <button class="btn primary" type="submit" (click)="addUser()">
+  {{ isEditMode ? 'Update User' : 'Add User' }}
+</button>
+    </div>
+
+  </div>
+</div>

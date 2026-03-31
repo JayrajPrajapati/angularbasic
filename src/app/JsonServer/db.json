@@ -1,14 +1,70 @@
 {
-  "$schema": "./node_modules/json-server/schema.json",
-  "posts": [
-    { "id": "1", "title": "a title", "views": 100 },
-    { "id": "2", "title": "another title", "views": 200 }
+  "user": [
+    {
+      "id": "1",
+      "username": "jayraj",
+      "gender": "Male",
+      "range": "Senior",
+      "bio": "Full stack .NET developer",
+      "designation": "Software Engineer",
+      "package": "8 LPA",
+      "role": "Full Stack Developer",
+      "expertise": ".NET, Angular, SQL Server",
+      "degree": "B.E. Computer Engineering",
+      "mobile": "+91-9876543210"
+    },
+    {
+      "username": "rahul",
+      "gender": "Male",
+      "range": "Senior",
+      "designation": "Technical Architect",
+      "role": "Backend Lead",
+      "expertise": ".NET Core, Microservices, Azure",
+      "degree": "M.Tech Computer Science",
+      "package": "11 LPA",
+      "mobile": "9988775412",
+      "bio": "Backend architect",
+      "id": "3"
+    },
+    {
+      "id": "5",
+      "username": "amit",
+      "gender": "Male",
+      "range": "Junior",
+      "bio": "Software trainee",
+      "designation": "Trainee Engineer",
+      "package": "3 LPA",
+      "role": "Support Developer",
+      "expertise": "C#, SQL Basics",
+      "degree": "BCA",
+      "mobile": "+91-9090909090"
+    },
+    {
+      "id": "HsGaaGjEm3I",
+      "username": "dharmi",
+      "gender": "FeMale",
+      "range": "Mid-Level",
+      "bio": "UI developer",
+      "designation": "Graphic Design",
+      "package": "4 LPA",
+      "role": "UI UX Designer",
+      "expertise": "Adobe, Figma",
+      "degree": "Commerce",
+      "mobile": "+91-6352798275"
+    },
+    {
+      "id": "kZEGSnVi0Wg",
+      "username": "Anim nemo nulla est",
+      "gender": "Male",
+      "range": "",
+      "designation": "Minim sint blanditii",
+      "role": "Soluta in ad lorem i",
+      "expertise": "Et aliquip quis cons",
+      "degree": "Omnis incidunt nisi",
+      "package": "Sapiente ipsa dolor",
+      "mobile": "1111111111",
+      "bio": "Reiciendis maiores v"
+    }
   ],
-  "comments": [
-    { "id": "1", "text": "a comment about post 1", "postId": "1" },
-    { "id": "2", "text": "another comment about post 1", "postId": "1" }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  "$schema": "./node_modules/json-server/schema.json"
 }
